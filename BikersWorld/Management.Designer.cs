@@ -182,6 +182,7 @@
             this.btnStockControl.TabIndex = 0;
             this.btnStockControl.Text = "Stock &Control";
             this.btnStockControl.UseVisualStyleBackColor = true;
+            this.btnStockControl.Click += new System.EventHandler(this.btnStockControl_Click);
             // 
             // btnLogout
             // 

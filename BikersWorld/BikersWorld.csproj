@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmStockControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStockControl.Designer.cs">
+      <DependentUpon>frmStockControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Management.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sale.cs" />
     <Compile Include="Supplier.cs" />
+    <EmbeddedResource Include="frmStockControl.resx">
+      <DependentUpon>frmStockControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Management.resx">
       <DependentUpon>Management.cs</DependentUpon>
     </EmbeddedResource>

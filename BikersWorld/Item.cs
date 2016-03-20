@@ -7,81 +7,118 @@ namespace BikersWorld
 {
     public class Item
     {
-        public int ItemID
+
+        //private variables
+        protected int ItemID;
+        protected string ItemName;
+        protected string Description;
+        protected float Price;
+        protected int Quantity;
+        protected string SupplierName;
+        protected int SupplierID;
+
+
+        //Constructors
+
+        public Item() { } //default
+        public Item(int itemID, string itemName, string description, float price, int quantity, string suppliername )
+        {
+            ItemID = itemID;
+            ItemName = itemName;
+            Description = description;
+            Price = price;
+            Quantity = quantity;
+            SupplierName = suppliername;
+        }
+
+
+
+        //access modifiers
+        public int itemID
         {
             get
             {
-                throw new System.NotImplementedException();
+                return ItemID;
             }
             set
             {
+                ItemID = value;
             }
         }
 
-        public string ItemName
+        public string itemName
         {
             get
             {
-                throw new System.NotImplementedException();
+                return ItemName;
             }
             set
             {
+                ItemName = value;
             }
         }
 
-        public string Description
+        public string description
         {
             get
             {
-                throw new System.NotImplementedException();
+                return Description;
             }
             set
             {
+                Description = value;
             }
         }
 
-        public float Price
+        public float price
         {
             get
             {
-                throw new System.NotImplementedException();
+                return Price;
             }
             set
             {
+                Price = value;
+            }
+        }
+    
+        public int quantity
+        {
+            get
+            {
+                return Quantity;
+            }
+            set
+            {
+                Quantity = value;
             }
         }
 
-        public int Quantity
+        public string supplierName
         {
             get
             {
-                throw new System.NotImplementedException();
+                return SupplierName;
             }
             set
             {
+                SupplierName = value;
             }
         }
 
-        public string SupplierName
+        public int supplierID
         {
             get
             {
-                throw new System.NotImplementedException();
+                return SupplierID;
             }
             set
             {
+                SupplierID = value;
             }
         }
 
-        public int SupplierID
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
+
+
     }
 }

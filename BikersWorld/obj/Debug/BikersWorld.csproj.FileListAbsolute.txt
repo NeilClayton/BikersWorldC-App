@@ -22,3 +22,5 @@ E:\BikersWorldC-App\BikersWorld\obj\Debug\BikersWorld.staffManagement.resources
 E:\BikersWorldC-App\BikersWorld\obj\Debug\BikersWorld.frmLogin.resources
 E:\BikersWorldC-App\BikersWorld\obj\Debug\BikersWorld.Properties.Resources.resources
 E:\BikersWorldC-App\BikersWorld\obj\Debug\BikersWorld.csproj.GenerateResource.Cache
+E:\BikersWorldC-App\BikersWorld\obj\Debug\BikersWorld.frmStockControl.resources
+I:\BikersWorldC-App\BikersWorld\obj\Debug\BikersWorld.frmStockControl.resources

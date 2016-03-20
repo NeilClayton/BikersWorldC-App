@@ -6,6 +6,7 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using System.Data;
 
 #region toDO
         //instantiate and load forms for sales and tech when
@@ -193,6 +194,58 @@ namespace BikersWorld
         {
             frmLogin loginAgain = new frmLogin();
             loginAgain.ShowDialog();
+        }
+
+        public DataTable getProducts()
+        {
+            DataTable dt = new DataTable();
+            string query = "SELECT item_id, item_name, description, price, quantity, supplier_name FROM items LEFT JOIN suppliers ON items.supplier_id = suppliers.supplier_id";
+            if (this.openConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader myReader = cmd.ExecuteReader();
+
+                dt.Load(myReader);
+
+                return dt;
+            }
+            else
+            {
+                MessageBox.Show("Failed to connect to database, if problem persists please contact your network administrator!");
+                return null;
+            }
+        } 
+
+
+        public DataTable filterProducts(string value, string criteria)
+        {
+
+            string query = "";           
+            switch (criteria)
+            {
+                case "product":
+                    query = "SELECT item_id, item_name, description, price, quantity, supplier_name FROM items LEFT JOIN suppliers ON items.supplier_id = suppliers.supplier_id WHERE item_name LIKE '%" + value + "%';";
+                    break;
+                case "manufacturer":
+                    query = "SELECT item_id, item_name, description, price, quantity, supplier_name FROM suppliers RIGHT JOIN items ON suppliers.supplier_id = items.supplier_id WHERE supplier_name LIKE '%" + value + "%';";
+                    break;
+                default:
+                    query = "SELECT item_id, item_name, description, price, quantity, supplier_name FROM items LEFT JOIN suppliers ON items.supplier_id = suppliers.supplier_id WHERE item_name LIKE '%" + value + "%' AND supplier_name LIKE '%" + criteria + "%';";
+                    break;
+            }
+            DataTable dt = new DataTable();
+            if (this.openConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                dt.Load(dataReader);
+                return dt;
+            }
+            else
+            {
+                MessageBox.Show("Failed to connect to database, if problem persists please contact your network administrator!");
+                return null;
+            }
         }
 
     }
