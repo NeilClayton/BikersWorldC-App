@@ -45,14 +45,14 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtDateStarted = new System.Windows.Forms.TextBox();
             this.txtEstimatedCompletionDate = new System.Windows.Forms.TextBox();
-            this.txtCompletionDate = new System.Windows.Forms.TextBox();
+            this.txtDateCompleted = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
             this.txtEmployeeID = new System.Windows.Forms.TextBox();
             this.txtDateLogged = new System.Windows.Forms.TextBox();
-            this.combJobOpenClosed = new System.Windows.Forms.ComboBox();
+            this.combJobOpenClose = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -165,9 +165,9 @@
             this.lblCompletionDate.AutoSize = true;
             this.lblCompletionDate.Location = new System.Drawing.Point(331, 194);
             this.lblCompletionDate.Name = "lblCompletionDate";
-            this.lblCompletionDate.Size = new System.Drawing.Size(85, 13);
+            this.lblCompletionDate.Size = new System.Drawing.Size(83, 13);
             this.lblCompletionDate.TabIndex = 9;
-            this.lblCompletionDate.Text = "Completion Date";
+            this.lblCompletionDate.Text = "Date Completed";
             // 
             // lblJobOpenClosed
             // 
@@ -200,12 +200,12 @@
             this.txtEstimatedCompletionDate.Size = new System.Drawing.Size(108, 20);
             this.txtEstimatedCompletionDate.TabIndex = 33;
             // 
-            // txtCompletionDate
+            // txtDateCompleted
             // 
-            this.txtCompletionDate.Location = new System.Drawing.Point(466, 191);
-            this.txtCompletionDate.Name = "txtCompletionDate";
-            this.txtCompletionDate.Size = new System.Drawing.Size(108, 20);
-            this.txtCompletionDate.TabIndex = 34;
+            this.txtDateCompleted.Location = new System.Drawing.Point(466, 191);
+            this.txtDateCompleted.Name = "txtDateCompleted";
+            this.txtDateCompleted.Size = new System.Drawing.Size(108, 20);
+            this.txtDateCompleted.TabIndex = 34;
             // 
             // btnSubmit
             // 
@@ -215,6 +215,7 @@
             this.btnSubmit.TabIndex = 36;
             this.btnSubmit.Text = "&Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnClear
             // 
@@ -257,33 +258,33 @@
             this.txtDateLogged.Size = new System.Drawing.Size(108, 20);
             this.txtDateLogged.TabIndex = 31;
             // 
-            // combJobOpenClosed
+            // combJobOpenClose
             // 
-            this.combJobOpenClosed.AutoCompleteCustomSource.AddRange(new string[] {
+            this.combJobOpenClose.AutoCompleteCustomSource.AddRange(new string[] {
             "Open",
             "Closed"});
-            this.combJobOpenClosed.FormattingEnabled = true;
-            this.combJobOpenClosed.Items.AddRange(new object[] {
+            this.combJobOpenClose.FormattingEnabled = true;
+            this.combJobOpenClose.Items.AddRange(new object[] {
             "Open",
             "Closed"});
-            this.combJobOpenClosed.Location = new System.Drawing.Point(467, 255);
-            this.combJobOpenClosed.Name = "combJobOpenClosed";
-            this.combJobOpenClosed.Size = new System.Drawing.Size(107, 21);
-            this.combJobOpenClosed.TabIndex = 35;
+            this.combJobOpenClose.Location = new System.Drawing.Point(467, 255);
+            this.combJobOpenClose.Name = "combJobOpenClose";
+            this.combJobOpenClose.Size = new System.Drawing.Size(107, 21);
+            this.combJobOpenClose.TabIndex = 35;
             // 
             // frmLogNewJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(623, 384);
-            this.Controls.Add(this.combJobOpenClosed);
+            this.Controls.Add(this.combJobOpenClose);
             this.Controls.Add(this.txtDateLogged);
             this.Controls.Add(this.txtEmployeeID);
             this.Controls.Add(this.txtCustomerID);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.txtCompletionDate);
+            this.Controls.Add(this.txtDateCompleted);
             this.Controls.Add(this.txtEstimatedCompletionDate);
             this.Controls.Add(this.txtDateStarted);
             this.Controls.Add(this.txtDescription);
@@ -327,13 +328,13 @@
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.TextBox txtDateStarted;
         private System.Windows.Forms.TextBox txtEstimatedCompletionDate;
-        private System.Windows.Forms.TextBox txtCompletionDate;
+        private System.Windows.Forms.TextBox txtDateCompleted;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.TextBox txtCustomerID;
         private System.Windows.Forms.TextBox txtEmployeeID;
         private System.Windows.Forms.TextBox txtDateLogged;
-        private System.Windows.Forms.ComboBox combJobOpenClosed;
+        private System.Windows.Forms.ComboBox combJobOpenClose;
     }
 }

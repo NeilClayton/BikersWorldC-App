@@ -15,10 +15,11 @@ namespace BikersWorld
         {
             get
             {
-                throw new System.NotImplementedException();
+                return JobID;
             }
             set
             {
+                JobID = value;
             }
         }
 
@@ -26,10 +27,11 @@ namespace BikersWorld
         {
             get
             {
-                throw new System.NotImplementedException();
+                return CustomerID;
             }
             set
             {
+                CustomerID = value;
             }
         }
 
@@ -37,10 +39,11 @@ namespace BikersWorld
         {
             get
             {
-                throw new System.NotImplementedException();
+                return EmployeeID;
             }
             set
             {
+                EmployeeID = value;
             }
         }
 
@@ -48,10 +51,11 @@ namespace BikersWorld
         {
             get
             {
-                throw new System.NotImplementedException();
+                return Description;
             }
             set
             {
+                Description = value;
             }
         }
 
@@ -59,10 +63,11 @@ namespace BikersWorld
         {
             get
             {
-                throw new System.NotImplementedException();
+                return DateLogged;
             }
             set
             {
+                DateLogged = value;
             }
         }
 
@@ -70,10 +75,11 @@ namespace BikersWorld
         {
             get
             {
-                throw new System.NotImplementedException();
+                return DateStarted;
             }
             set
             {
+                DateStarted = value;
             }
         }
 
@@ -81,10 +87,11 @@ namespace BikersWorld
         {
             get
             {
-                throw new System.NotImplementedException();
+                return EstimatedCompletionDate;
             }
             set
             {
+                EstimatedCompletionDate = value;
             }
         }
 
@@ -92,23 +99,30 @@ namespace BikersWorld
         {
             get
             {
-                throw new System.NotImplementedException();
+                return DateCompleted;
             }
             set
             {
+                DateCompleted = value;
             }
         }
 
-        public bool JobOpenClose
+        public int JobOpenClose
         {
             get
             {
-                throw new System.NotImplementedException();
+                return JobOpenClose;
             }
             set
             {
+                JobOpenClose = value;
             }
         }
+
+        public void insertJob(job currentJob)
+    {
+        string query = "INSERT INTO jobs(customer_id, employee_id, description, date_logged, date_started, estimated_completion, date_completed, job_open_close) VALUES (" + currentJob.CustomerID + ", " + currentJob.EmployeeID + ", '" + currentJob.Description + "', " + currentJob.DateLogged + ", " + currentJob.DateStarted + ", " + currentJob.EstimatedCompletionDate + ", " + currentJob.DateCompleted + ", '" + currentJob.JobOpenClose + "')";
+    }
 
         public DataTable getOpenJobs()
         {

@@ -32,8 +32,8 @@ namespace BikersWorld
             txtDateLogged.Clear();
             txtDateStarted.Clear();
             txtEstimatedCompletionDate.Clear();
-            txtCompletionDate.Clear();
-            combJobOpenClosed.Text = ("");
+            txtDateCompleted.Clear();
+            combJobOpenClose.Text = ("");
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -49,8 +49,8 @@ namespace BikersWorld
             txtDateLogged.Clear();
             txtDateStarted.Clear();
             txtEstimatedCompletionDate.Clear();
-            txtCompletionDate.Clear();
-            combJobOpenClosed.Text = ("");
+            txtDateCompleted.Clear();
+            combJobOpenClose.Text = ("");
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -61,6 +61,21 @@ namespace BikersWorld
         private void frmLogNewJob_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            job thisJob = new job();
+            thisJob.CustomerID = Convert.ToInt16 (txtCustomerID.Text);
+            thisJob.EmployeeID = Convert.ToInt16 (txtEmployeeID.Text);
+            thisJob.Description = txtDescription.Text;
+            thisJob.DateLogged = txtDateLogged.Text;
+            thisJob.DateStarted = txtDateStarted.Text;
+            thisJob.EstimatedCompletionDate = txtEstimatedCompletionDate.Text;
+            thisJob.DateCompleted = txtDateCompleted.Text;
+            thisJob.JobOpenClose = Convert.ToInt16 (combJobOpenClose.Text);
+
+            thisJob.insertJob(thisJob);
         }
     }
 }

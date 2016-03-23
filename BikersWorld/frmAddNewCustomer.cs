@@ -28,6 +28,7 @@ namespace BikersWorld
         private void frmAddNewCustomer_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            combTitle.SelectedIndex = 0;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -69,5 +70,58 @@ namespace BikersWorld
         {
             this.Close();
         }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            bool formCompleted = validate_form();
+            if (formCompleted)
+            {
+
+
+
+                Customer cust = new Customer();
+
+                
+                cust.Title = combTitle.Text;
+                cust.Fname = txtForename.Text;
+                cust.Lname = txtSurname.Text;
+                cust.Address1 = txtAddress1.Text;
+                cust.Address2 = txtAddress2.Text;
+                cust.Address3 = txtAddress3.Text;
+                cust.Postcode = txtPostcode.Text;
+                cust.Telephone1 = txtTelephone1.Text;
+                cust.Telephone2 = txtTelephone2.Text;
+                cust.Email = txtEmail.Text;
+
+                cust.insertCustomer(cust);
+
+            }
+            else
+            {
+                MessageBox.Show("Please complete all fields.");
+            }
+
+
+        }
+
+        public bool validate_form()
+
+        {
+            bool validate = true;
+            foreach (Control x in this.Controls)
+            {
+                if (x is TextBox)
+                {
+                    if (((TextBox) x).Text==String.Empty)
+                    {
+                        validate=false;
+                        break;
+                    }
+                }
+            }
+            return validate;
+        }
+
     }
+
 }

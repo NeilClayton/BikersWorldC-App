@@ -112,7 +112,31 @@ namespace BikersWorld
             return null;
         }
 
+        public void DataInsert(string query)
+        {
+            try
+            {
+                if (this.openConnection() == true)
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.ExecuteNonQuery();
+                    this.closeConnection();
+                    MessageBox.Show("Data Successfully Inserted");
+
+
+                }
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString()); 
+            }
+        }
+
+
+
+
 #endregion
+
+
 
 
        

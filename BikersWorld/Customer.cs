@@ -11,7 +11,7 @@ namespace BikersWorld
         dbEW accessDB = new dbEW();
         DataTable dt = new DataTable();
 
-        public Customer(){}
+        public Customer() { }
 
         private int _CustomerID;
 
@@ -28,13 +28,17 @@ namespace BikersWorld
             }
 
 
+            #region Elliott Additions
+
         }
 
-        public Customer(int _CustomerID, string _Title, string _Fname, string _Lname, string _Address1, 
-            string _Address2, string _Address3, string _Postcode, string _Email, string _Telephone1, string _Telephone2)
-     {
+            #endregion
 
-            CustomerID =  _CustomerID;
+        public Customer(int _CustomerID, string _Title, string _Fname, string _Lname, string _Address1,
+            string _Address2, string _Address3, string _Postcode, string _Email, string _Telephone1, string _Telephone2)
+        {
+
+            CustomerID = _CustomerID;
             this.Title = _Title;
             this.Fname = _Fname;
             this.Lname = _Lname;
@@ -48,7 +52,7 @@ namespace BikersWorld
 
 
 
-     }
+        }
 
         public DataTable getCustomers()
         {
@@ -56,8 +60,13 @@ namespace BikersWorld
             dt = accessDB.grabAll(query);
             return dt;
         }
-    
-    
-    }
 
+        public void insertCustomer(Customer cust) 
+        {
+            string query = "INSERT INTO customer(title, forename, surname, address_1, address_2, address_3, " +
+                "postcode, telephone_1, telephone_2, email)" +
+            "VALUES ('" + cust.Title + "', '" + cust.Fname + "', '" + cust.Lname + "', '" + cust.Address1 + "', '" + cust.Address2 + "', '" + cust.Address3 + "', '" + cust.Postcode + "', '" + cust.Telephone1 + "', '" + cust.Telephone2 + "', '" + cust.Email + "')";
+            accessDB.DataInsert(query);
+        }
+    }
 }
