@@ -24,3 +24,6 @@ I:\BikersWorldC-App\BikersWorld\obj\Debug\BikersWorld.exe
 I:\BikersWorldC-App\BikersWorld\obj\Debug\BikersWorld.pdb
 I:\BikersWorldC-App\BikersWorld\obj\Debug\BikersWorld.frmAddNewCustomer.resources
 I:\BikersWorldC-App\BikersWorld\obj\Debug\BikersWorld.frmLogNewJob.resources
+C:\Users\Elliott\Documents\GitHub\BikersWorldC-App\BikersWorld\bin\Debug\BikersWorld.exe.config
+C:\Users\Elliott\Documents\GitHub\BikersWorldC-App\BikersWorld\obj\Debug\BikersWorld.exe
+C:\Users\Elliott\Documents\GitHub\BikersWorldC-App\BikersWorld\obj\Debug\BikersWorld.pdb
