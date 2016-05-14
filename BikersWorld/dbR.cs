@@ -118,5 +118,53 @@ namespace BikersWorld
         #endregion
 
 
+        public void insert (string query)
+        {
+
+            if (this.openConnection() == true)
+            {
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                MessageBox.Show("Employee has been Created");
+
+                while (dataReader.Read())
+                {
+
+                }
+
+                dataReader.Close();
+                this.closeConnection();
+            }
+            else
+            { MessageBox.Show("Some error has occur when connecting to the database, please contact your Network Administrator"); }
+
+        }
+
+
+        public void update (string query)
+        {
+
+            if (this.openConnection() == true)
+            {
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                MessageBox.Show("Employee  has been Updated");
+
+                while (dataReader.Read())
+                {
+
+                }
+
+                dataReader.Close();
+                this.closeConnection();
+            }
+            else
+            { MessageBox.Show("Some error has occur when connecting to the database, please contact your Network Administrator"); }
+
+
+        }
+
     }
 }

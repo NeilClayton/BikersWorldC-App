@@ -84,6 +84,8 @@ InnoDB: Restoring possible half-written data pages from the doublewrite
 InnoDB: buffer...
 160314 16:45:11  InnoDB: Waiting for the background threads to start
 160314 16:45:12 InnoDB: 1.1.8 started; log sequence number 1969915
+<<<<<<< HEAD
+=======
 160320 13:43:55 [Note] Plugin 'FEDERATED' is disabled.
 160320 13:43:55 InnoDB: The InnoDB memory heap is disabled
 160320 13:43:55 InnoDB: Mutexes and rw_locks use Windows interlocked functions
@@ -204,3 +206,4 @@ InnoDB: buffer...
 160509 16:47:08  InnoDB: Shutdown completed; log sequence number 2001071
 160509 16:47:08 [Note] I:\BikersWorldC-App\PHP-Webserver/mysql/bin/mysqld_usbwv8.exe: Shutdown complete
 
+>>>>>>> refs/remotes/origin/master

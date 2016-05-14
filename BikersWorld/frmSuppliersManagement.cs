@@ -13,7 +13,9 @@ namespace BikersWorld
     public partial class frmSuppliersManagement : Form
     {
 
-        Supplier suppSearch = new Supplier();
+        supplier suppSearch = new supplier();
+        string selectedID;
+        int switch_on = 0;
         public frmSuppliersManagement()
         {
             InitializeComponent();
@@ -54,9 +56,144 @@ namespace BikersWorld
 
         }
 
+
+     
+
+
         private void frmSuppliersManagement_Load(object sender, EventArgs e)
         {
             dgvSuppList.DataSource = suppSearch.getAllSuppliers();
+            AppTools.disableControlsGrb(grbEdit);
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+
+            
+           
+            #region goup components andler 
+            /*
+             * 
+             * code used to reset the content of the group boxes
+             * and disable controls
+             * 
+             * */
+            AppTools.ResetAllGrb(grbEdit);
+            AppTools.ResetAllGrb(grbSearch);
+            AppTools.disableControlsGrb(grbEdit);
+            grbOptions.Visible = false;
+            btnSubmit.Visible = false;
+            btnCancel.Visible = false;
+
+            #endregion
+
+            #region populate data grid view 
+            /*
+             *Get all Suppliers 
+             */
+            dgvSuppList.DataSource = suppSearch.getAllSuppliers();
+            #endregion
+           
+                
+        }
+
+        private void brnNew_Click(object sender, EventArgs e)
+        {
+            AppTools.ResetAllGrb(grbEdit);
+            AppTools.enableControlsGrb(grbEdit);
+            switch_on = 1;
+        }
+
+       
+
+        private void dgvSuppList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+
+            int selectedRow = dgvSuppList.CurrentRow.Index;
+
+
+            selectedID = dgvSuppList.Rows[selectedRow].Cells[0].Value.ToString();
+
+            txtSupplierNameEdit.Text = dgvSuppList.Rows[selectedRow].Cells[1].Value.ToString();
+
+            txtAddressLineOneEdit.Text = dgvSuppList.Rows[selectedRow].Cells[2].Value.ToString();
+            txtAddressLineTwoEdit.Text = dgvSuppList.Rows[selectedRow].Cells[3].Value.ToString();
+            txtAddressLineThreeEdit.Text = dgvSuppList.Rows[selectedRow].Cells[4].Value.ToString();
+            txtPostalCodeEdit.Text = dgvSuppList.Rows[selectedRow].Cells[5].Value.ToString();
+            txtTelephoneOneEdit.Text = dgvSuppList.Rows[selectedRow].Cells[6].Value.ToString();
+            txtTelephoneTwoEdit.Text = dgvSuppList.Rows[selectedRow].Cells[7].Value.ToString();
+            txtEmailEdit.Text = dgvSuppList.Rows[selectedRow].Cells[8].Value.ToString();
+
+
+            AppTools.disableControlsGrb(grbEdit);
+            grbEdit.Text = "Staff N:" + selectedID;
+            grbOptions.Visible = true;
+          
+
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+            AppTools.enableControlsGrb(grbEdit);
+            btnSubmit.Visible = true;
+            btnCancel.Visible = true;
+            switch_on = 2;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
+            btnSubmit.Visible = false;
+            btnCancel.Visible = false;
+            AppTools.disableControlsGrb(grbEdit);
+
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            supplier supplierSubmit = new supplier( txtSupplierNameEdit.Text, txtAddressLineOneEdit.Text, txtAddressLineTwoEdit.Text, 
+                txtAddressLineThreeEdit.Text,txtPostalCodeEdit.Text,
+                txtTelephoneOneEdit.Text, txtTelephoneTwoEdit.Text,  txtEmailEdit.Text );
+
+
+            switch (switch_on)
+            {
+                case 1:
+                    supplierSubmit.submit();
+                    break;
+                    
+
+                case 2 :
+                    supplierSubmit.update(Convert.ToInt16(selectedID));
+
+                    break;
+
+
+
+
+
+            }
+            #region populate data grid view
+            /*
+             *Get all Suppliers 
+             */
+            dgvSuppList.DataSource = suppSearch.getAllSuppliers();
+            #endregion
+          
+            btnSubmit.Visible = false;
+            btnCancel.Visible = false;
+            AppTools.disableControlsGrb(grbEdit);
+
+           
+
+        }
+
+     
+
+       
     }
 }

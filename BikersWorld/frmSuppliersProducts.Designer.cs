@@ -1,6 +1,6 @@
 ﻿namespace BikersWorld
 {
-    partial class frmSuppliersManagement
+    partial class frmSuppliersProducts
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grbEdit = new System.Windows.Forms.GroupBox();
+            this.lblSupplierName = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.lblEmailEdit = new System.Windows.Forms.Label();
@@ -38,59 +38,41 @@
             this.lblTelephoneOneEdit = new System.Windows.Forms.Label();
             this.txtTelephoneOneEdit = new System.Windows.Forms.TextBox();
             this.lblPostalCodeEdit = new System.Windows.Forms.Label();
-            this.txtPostalCodeEdit = new System.Windows.Forms.TextBox();
-            this.lblAddressThreeEdit = new System.Windows.Forms.Label();
-            this.txtAddressLineThreeEdit = new System.Windows.Forms.TextBox();
-            this.lblAddressLineTwoEdit = new System.Windows.Forms.Label();
-            this.txtAddressLineTwoEdit = new System.Windows.Forms.TextBox();
-            this.lblAddressLineOneEdit = new System.Windows.Forms.Label();
-            this.txtAddressLineOneEdit = new System.Windows.Forms.TextBox();
-            this.lblSupplierNameEdit = new System.Windows.Forms.Label();
-            this.txtSupplierNameEdit = new System.Windows.Forms.TextBox();
-            this.dgvSuppList = new System.Windows.Forms.DataGridView();
-            this.txtSupplierName = new System.Windows.Forms.TextBox();
-            this.txtSuppId = new System.Windows.Forms.TextBox();
-            this.lblSupplierName = new System.Windows.Forms.Label();
-            this.labelSuppId = new System.Windows.Forms.Label();
             this.brnNew = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.grbOptions = new System.Windows.Forms.GroupBox();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.grbSearch = new System.Windows.Forms.GroupBox();
+            this.txtPostalCodeEdit = new System.Windows.Forms.TextBox();
+            this.lblAddressThreeEdit = new System.Windows.Forms.Label();
+            this.txtAddressLineThreeEdit = new System.Windows.Forms.TextBox();
+            this.lblAddressLineTwoEdit = new System.Windows.Forms.Label();
+            this.labelSuppId = new System.Windows.Forms.Label();
+            this.txtAddressLineTwoEdit = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
-            this.grbEdit.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSuppList)).BeginInit();
+            this.lblAddressLineOneEdit = new System.Windows.Forms.Label();
+            this.txtSupplierName = new System.Windows.Forms.TextBox();
+            this.dgvSuppList = new System.Windows.Forms.DataGridView();
+            this.txtAddressLineOneEdit = new System.Windows.Forms.TextBox();
+            this.lblSupplierNameEdit = new System.Windows.Forms.Label();
+            this.txtSupplierNameEdit = new System.Windows.Forms.TextBox();
+            this.grbSearch = new System.Windows.Forms.GroupBox();
+            this.txtSuppId = new System.Windows.Forms.TextBox();
+            this.grbEdit = new System.Windows.Forms.GroupBox();
             this.grbOptions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSuppList)).BeginInit();
             this.grbSearch.SuspendLayout();
+            this.grbEdit.SuspendLayout();
             this.SuspendLayout();
             // 
-            // grbEdit
+            // lblSupplierName
             // 
-            this.grbEdit.Controls.Add(this.btnCancel);
-            this.grbEdit.Controls.Add(this.btnSubmit);
-            this.grbEdit.Controls.Add(this.lblEmailEdit);
-            this.grbEdit.Controls.Add(this.txtEmailEdit);
-            this.grbEdit.Controls.Add(this.lblTelephoneTwoEdit);
-            this.grbEdit.Controls.Add(this.txtTelephoneTwoEdit);
-            this.grbEdit.Controls.Add(this.lblTelephoneOneEdit);
-            this.grbEdit.Controls.Add(this.txtTelephoneOneEdit);
-            this.grbEdit.Controls.Add(this.lblPostalCodeEdit);
-            this.grbEdit.Controls.Add(this.txtPostalCodeEdit);
-            this.grbEdit.Controls.Add(this.lblAddressThreeEdit);
-            this.grbEdit.Controls.Add(this.txtAddressLineThreeEdit);
-            this.grbEdit.Controls.Add(this.lblAddressLineTwoEdit);
-            this.grbEdit.Controls.Add(this.txtAddressLineTwoEdit);
-            this.grbEdit.Controls.Add(this.lblAddressLineOneEdit);
-            this.grbEdit.Controls.Add(this.txtAddressLineOneEdit);
-            this.grbEdit.Controls.Add(this.lblSupplierNameEdit);
-            this.grbEdit.Controls.Add(this.txtSupplierNameEdit);
-            this.grbEdit.Location = new System.Drawing.Point(28, 364);
-            this.grbEdit.Name = "grbEdit";
-            this.grbEdit.Size = new System.Drawing.Size(572, 261);
-            this.grbEdit.TabIndex = 36;
-            this.grbEdit.TabStop = false;
-            this.grbEdit.Text = "Supplier N: ";
+            this.lblSupplierName.AutoSize = true;
+            this.lblSupplierName.Location = new System.Drawing.Point(102, 13);
+            this.lblSupplierName.Name = "lblSupplierName";
+            this.lblSupplierName.Size = new System.Drawing.Size(76, 13);
+            this.lblSupplierName.TabIndex = 4;
+            this.lblSupplierName.Text = "Supplier Name";
             // 
             // btnCancel
             // 
@@ -101,7 +83,6 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Visible = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSubmit
             // 
@@ -112,7 +93,6 @@
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Visible = false;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // lblEmailEdit
             // 
@@ -171,6 +151,54 @@
             this.lblPostalCodeEdit.TabIndex = 16;
             this.lblPostalCodeEdit.Text = "Postal Code";
             // 
+            // brnNew
+            // 
+            this.brnNew.Location = new System.Drawing.Point(444, 58);
+            this.brnNew.Name = "brnNew";
+            this.brnNew.Size = new System.Drawing.Size(75, 23);
+            this.brnNew.TabIndex = 43;
+            this.brnNew.Text = "New";
+            this.brnNew.UseVisualStyleBackColor = true;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(22, 71);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 6;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(119, 19);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 27;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // grbOptions
+            // 
+            this.grbOptions.Controls.Add(this.btnDelete);
+            this.grbOptions.Controls.Add(this.btnEdit);
+            this.grbOptions.Location = new System.Drawing.Point(373, 87);
+            this.grbOptions.Name = "grbOptions";
+            this.grbOptions.Size = new System.Drawing.Size(211, 60);
+            this.grbOptions.TabIndex = 42;
+            this.grbOptions.TabStop = false;
+            this.grbOptions.Text = "Options";
+            this.grbOptions.Visible = false;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(23, 19);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 26;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
             // txtPostalCodeEdit
             // 
             this.txtPostalCodeEdit.Location = new System.Drawing.Point(407, 102);
@@ -204,6 +232,15 @@
             this.lblAddressLineTwoEdit.TabIndex = 12;
             this.lblAddressLineTwoEdit.Text = "Address line 2";
             // 
+            // labelSuppId
+            // 
+            this.labelSuppId.AutoSize = true;
+            this.labelSuppId.Location = new System.Drawing.Point(15, 14);
+            this.labelSuppId.Name = "labelSuppId";
+            this.labelSuppId.Size = new System.Drawing.Size(59, 13);
+            this.labelSuppId.TabIndex = 3;
+            this.labelSuppId.Text = "Supplier ID";
+            // 
             // txtAddressLineTwoEdit
             // 
             this.txtAddressLineTwoEdit.Location = new System.Drawing.Point(151, 102);
@@ -211,6 +248,15 @@
             this.txtAddressLineTwoEdit.Name = "txtAddressLineTwoEdit";
             this.txtAddressLineTwoEdit.Size = new System.Drawing.Size(100, 60);
             this.txtAddressLineTwoEdit.TabIndex = 11;
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(118, 71);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 7;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
             // 
             // lblAddressLineOneEdit
             // 
@@ -220,6 +266,26 @@
             this.lblAddressLineOneEdit.Size = new System.Drawing.Size(73, 13);
             this.lblAddressLineOneEdit.TabIndex = 10;
             this.lblAddressLineOneEdit.Text = "Address line 1";
+            // 
+            // txtSupplierName
+            // 
+            this.txtSupplierName.Location = new System.Drawing.Point(102, 30);
+            this.txtSupplierName.Name = "txtSupplierName";
+            this.txtSupplierName.Size = new System.Drawing.Size(100, 20);
+            this.txtSupplierName.TabIndex = 1;
+            // 
+            // dgvSuppList
+            // 
+            this.dgvSuppList.AllowUserToAddRows = false;
+            this.dgvSuppList.AllowUserToDeleteRows = false;
+            this.dgvSuppList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSuppList.GridColor = System.Drawing.Color.DarkGray;
+            this.dgvSuppList.Location = new System.Drawing.Point(11, 156);
+            this.dgvSuppList.Name = "dgvSuppList";
+            this.dgvSuppList.ReadOnly = true;
+            this.dgvSuppList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSuppList.Size = new System.Drawing.Size(573, 188);
+            this.dgvSuppList.TabIndex = 39;
             // 
             // txtAddressLineOneEdit
             // 
@@ -245,103 +311,6 @@
             this.txtSupplierNameEdit.Size = new System.Drawing.Size(100, 20);
             this.txtSupplierNameEdit.TabIndex = 2;
             // 
-            // dgvSuppList
-            // 
-            this.dgvSuppList.AllowUserToAddRows = false;
-            this.dgvSuppList.AllowUserToDeleteRows = false;
-            this.dgvSuppList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSuppList.GridColor = System.Drawing.Color.DarkGray;
-            this.dgvSuppList.Location = new System.Drawing.Point(27, 156);
-            this.dgvSuppList.Name = "dgvSuppList";
-            this.dgvSuppList.ReadOnly = true;
-            this.dgvSuppList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSuppList.Size = new System.Drawing.Size(573, 188);
-            this.dgvSuppList.TabIndex = 1;
-            this.dgvSuppList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSuppList_CellClick);
-            // 
-            // txtSupplierName
-            // 
-            this.txtSupplierName.Location = new System.Drawing.Point(102, 30);
-            this.txtSupplierName.Name = "txtSupplierName";
-            this.txtSupplierName.Size = new System.Drawing.Size(100, 20);
-            this.txtSupplierName.TabIndex = 1;
-            // 
-            // txtSuppId
-            // 
-            this.txtSuppId.Location = new System.Drawing.Point(18, 30);
-            this.txtSuppId.Name = "txtSuppId";
-            this.txtSuppId.Size = new System.Drawing.Size(69, 20);
-            this.txtSuppId.TabIndex = 0;
-            // 
-            // lblSupplierName
-            // 
-            this.lblSupplierName.AutoSize = true;
-            this.lblSupplierName.Location = new System.Drawing.Point(102, 13);
-            this.lblSupplierName.Name = "lblSupplierName";
-            this.lblSupplierName.Size = new System.Drawing.Size(76, 13);
-            this.lblSupplierName.TabIndex = 4;
-            this.lblSupplierName.Text = "Supplier Name";
-            // 
-            // labelSuppId
-            // 
-            this.labelSuppId.AutoSize = true;
-            this.labelSuppId.Location = new System.Drawing.Point(15, 14);
-            this.labelSuppId.Name = "labelSuppId";
-            this.labelSuppId.Size = new System.Drawing.Size(59, 13);
-            this.labelSuppId.TabIndex = 3;
-            this.labelSuppId.Text = "Supplier ID";
-            // 
-            // brnNew
-            // 
-            this.brnNew.Location = new System.Drawing.Point(460, 58);
-            this.brnNew.Name = "brnNew";
-            this.brnNew.Size = new System.Drawing.Size(75, 23);
-            this.brnNew.TabIndex = 38;
-            this.brnNew.Text = "New";
-            this.brnNew.UseVisualStyleBackColor = true;
-            this.brnNew.Click += new System.EventHandler(this.brnNew_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(22, 71);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 6;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(119, 19);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 27;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // grbOptions
-            // 
-            this.grbOptions.Controls.Add(this.btnDelete);
-            this.grbOptions.Controls.Add(this.btnEdit);
-            this.grbOptions.Location = new System.Drawing.Point(389, 87);
-            this.grbOptions.Name = "grbOptions";
-            this.grbOptions.Size = new System.Drawing.Size(211, 60);
-            this.grbOptions.TabIndex = 37;
-            this.grbOptions.TabStop = false;
-            this.grbOptions.Text = "Options";
-            this.grbOptions.Visible = false;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(23, 19);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 26;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
             // grbSearch
             // 
             this.grbSearch.Controls.Add(this.btnReset);
@@ -350,49 +319,72 @@
             this.grbSearch.Controls.Add(this.labelSuppId);
             this.grbSearch.Controls.Add(this.txtSupplierName);
             this.grbSearch.Controls.Add(this.txtSuppId);
-            this.grbSearch.Location = new System.Drawing.Point(27, 16);
+            this.grbSearch.Location = new System.Drawing.Point(11, 16);
             this.grbSearch.Name = "grbSearch";
             this.grbSearch.Size = new System.Drawing.Size(233, 109);
-            this.grbSearch.TabIndex = 34;
+            this.grbSearch.TabIndex = 40;
             this.grbSearch.TabStop = false;
             this.grbSearch.Text = "Search";
             // 
-            // btnReset
+            // txtSuppId
             // 
-            this.btnReset.Location = new System.Drawing.Point(118, 71);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 23);
-            this.btnReset.TabIndex = 7;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.txtSuppId.Location = new System.Drawing.Point(18, 30);
+            this.txtSuppId.Name = "txtSuppId";
+            this.txtSuppId.Size = new System.Drawing.Size(69, 20);
+            this.txtSuppId.TabIndex = 0;
             // 
-            // frmSuppliersManagement
+            // grbEdit
+            // 
+            this.grbEdit.Controls.Add(this.btnCancel);
+            this.grbEdit.Controls.Add(this.btnSubmit);
+            this.grbEdit.Controls.Add(this.lblEmailEdit);
+            this.grbEdit.Controls.Add(this.txtEmailEdit);
+            this.grbEdit.Controls.Add(this.lblTelephoneTwoEdit);
+            this.grbEdit.Controls.Add(this.txtTelephoneTwoEdit);
+            this.grbEdit.Controls.Add(this.lblTelephoneOneEdit);
+            this.grbEdit.Controls.Add(this.txtTelephoneOneEdit);
+            this.grbEdit.Controls.Add(this.lblPostalCodeEdit);
+            this.grbEdit.Controls.Add(this.txtPostalCodeEdit);
+            this.grbEdit.Controls.Add(this.lblAddressThreeEdit);
+            this.grbEdit.Controls.Add(this.txtAddressLineThreeEdit);
+            this.grbEdit.Controls.Add(this.lblAddressLineTwoEdit);
+            this.grbEdit.Controls.Add(this.txtAddressLineTwoEdit);
+            this.grbEdit.Controls.Add(this.lblAddressLineOneEdit);
+            this.grbEdit.Controls.Add(this.txtAddressLineOneEdit);
+            this.grbEdit.Controls.Add(this.lblSupplierNameEdit);
+            this.grbEdit.Controls.Add(this.txtSupplierNameEdit);
+            this.grbEdit.Location = new System.Drawing.Point(12, 364);
+            this.grbEdit.Name = "grbEdit";
+            this.grbEdit.Size = new System.Drawing.Size(572, 261);
+            this.grbEdit.TabIndex = 41;
+            this.grbEdit.TabStop = false;
+            this.grbEdit.Text = "Supplier N: ";
+            // 
+            // frmSuppliersProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 641);
-            this.Controls.Add(this.grbEdit);
-            this.Controls.Add(this.dgvSuppList);
+            this.ClientSize = new System.Drawing.Size(605, 657);
             this.Controls.Add(this.brnNew);
             this.Controls.Add(this.grbOptions);
+            this.Controls.Add(this.dgvSuppList);
             this.Controls.Add(this.grbSearch);
-            this.Name = "frmSuppliersManagement";
-            this.Text = "frmSuppliersManagement";
-            this.Load += new System.EventHandler(this.frmSuppliersManagement_Load);
-            this.grbEdit.ResumeLayout(false);
-            this.grbEdit.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSuppList)).EndInit();
+            this.Controls.Add(this.grbEdit);
+            this.Name = "frmSuppliersProducts";
+            this.Text = "frmSuppliersProducts";
             this.grbOptions.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSuppList)).EndInit();
             this.grbSearch.ResumeLayout(false);
             this.grbSearch.PerformLayout();
+            this.grbEdit.ResumeLayout(false);
+            this.grbEdit.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox grbEdit;
+        private System.Windows.Forms.Label lblSupplierName;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Label lblEmailEdit;
@@ -402,26 +394,26 @@
         private System.Windows.Forms.Label lblTelephoneOneEdit;
         private System.Windows.Forms.TextBox txtTelephoneOneEdit;
         private System.Windows.Forms.Label lblPostalCodeEdit;
-        private System.Windows.Forms.TextBox txtPostalCodeEdit;
-        private System.Windows.Forms.Label lblAddressThreeEdit;
-        private System.Windows.Forms.TextBox txtAddressLineThreeEdit;
-        private System.Windows.Forms.Label lblAddressLineTwoEdit;
-        private System.Windows.Forms.TextBox txtAddressLineTwoEdit;
-        private System.Windows.Forms.Label lblAddressLineOneEdit;
-        private System.Windows.Forms.TextBox txtAddressLineOneEdit;
-        private System.Windows.Forms.Label lblSupplierNameEdit;
-        private System.Windows.Forms.TextBox txtSupplierNameEdit;
-        private System.Windows.Forms.DataGridView dgvSuppList;
-        private System.Windows.Forms.TextBox txtSupplierName;
-        private System.Windows.Forms.TextBox txtSuppId;
-        private System.Windows.Forms.Label lblSupplierName;
-        private System.Windows.Forms.Label labelSuppId;
         private System.Windows.Forms.Button brnNew;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.GroupBox grbOptions;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.GroupBox grbSearch;
+        private System.Windows.Forms.TextBox txtPostalCodeEdit;
+        private System.Windows.Forms.Label lblAddressThreeEdit;
+        private System.Windows.Forms.TextBox txtAddressLineThreeEdit;
+        private System.Windows.Forms.Label lblAddressLineTwoEdit;
+        private System.Windows.Forms.Label labelSuppId;
+        private System.Windows.Forms.TextBox txtAddressLineTwoEdit;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Label lblAddressLineOneEdit;
+        private System.Windows.Forms.TextBox txtSupplierName;
+        private System.Windows.Forms.DataGridView dgvSuppList;
+        private System.Windows.Forms.TextBox txtAddressLineOneEdit;
+        private System.Windows.Forms.Label lblSupplierNameEdit;
+        private System.Windows.Forms.TextBox txtSupplierNameEdit;
+        private System.Windows.Forms.GroupBox grbSearch;
+        private System.Windows.Forms.TextBox txtSuppId;
+        private System.Windows.Forms.GroupBox grbEdit;
     }
 }

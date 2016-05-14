@@ -85,39 +85,7 @@ namespace BikersWorld
         }
 
 
-        private void dgvStaffList_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
 
-
-            int selectedRow = dgvStaffList.CurrentRow.Index;
-
-
-            selectedID  =dgvStaffList.Rows[selectedRow].Cells[0].Value.ToString();
-            cboTitleEdit.Text = dgvStaffList.Rows[selectedRow].Cells[1].Value.ToString();
-            txtFirstNameEdit.Text = dgvStaffList.Rows[selectedRow].Cells[2].Value.ToString();
-            txtLastNameEdit.Text  = dgvStaffList.Rows[selectedRow].Cells[3].Value.ToString();
-            txtAddressLineOneEdit.Text = dgvStaffList.Rows[selectedRow].Cells[4].Value.ToString();
-            txtAddressLineTwoEdit.Text = dgvStaffList.Rows[selectedRow].Cells[5].Value.ToString();
-            txtAddressLineThreeEdit.Text = dgvStaffList.Rows[selectedRow].Cells[6].Value.ToString();
-            txtPostalCodeEdit.Text = dgvStaffList.Rows[selectedRow].Cells[7].Value.ToString();
-            txtTelephoneOneEdit.Text = dgvStaffList.Rows[selectedRow].Cells[8].Value.ToString();
-            txtTelephoneTwoEdit.Text = dgvStaffList.Rows[selectedRow].Cells[9].Value.ToString();
-            txtEmailEdit.Text = dgvStaffList.Rows[selectedRow].Cells[10].Value.ToString();
-            cboJobRoleEdit.Text = dgvStaffList.Rows[selectedRow].Cells[12].Value.ToString();
-
-            AppTools.disableControlsGrb(grbEdit);
-            grbEdit.Text = "Staff N:" + selectedID;
-            grbOptions.Visible = true;
-            btnLogin.Visible = true;
-
-
-           
-
-            
-                
-
-
-        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -246,9 +214,35 @@ namespace BikersWorld
 
         }
 
+<<<<<<< HEAD
+        private void dgvStaffList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            int selectedRow = dgvStaffList.CurrentRow.Index;
+
+
+            selectedID = dgvStaffList.Rows[selectedRow].Cells[0].Value.ToString();
+            cboTitleEdit.Text = dgvStaffList.Rows[selectedRow].Cells[1].Value.ToString();
+            txtFirstNameEdit.Text = dgvStaffList.Rows[selectedRow].Cells[2].Value.ToString();
+            txtLastNameEdit.Text = dgvStaffList.Rows[selectedRow].Cells[3].Value.ToString();
+            txtAddressLineOneEdit.Text = dgvStaffList.Rows[selectedRow].Cells[4].Value.ToString();
+            txtAddressLineTwoEdit.Text = dgvStaffList.Rows[selectedRow].Cells[5].Value.ToString();
+            txtAddressLineThreeEdit.Text = dgvStaffList.Rows[selectedRow].Cells[6].Value.ToString();
+            txtPostalCodeEdit.Text = dgvStaffList.Rows[selectedRow].Cells[7].Value.ToString();
+            txtTelephoneOneEdit.Text = dgvStaffList.Rows[selectedRow].Cells[8].Value.ToString();
+            txtTelephoneTwoEdit.Text = dgvStaffList.Rows[selectedRow].Cells[9].Value.ToString();
+            txtEmailEdit.Text = dgvStaffList.Rows[selectedRow].Cells[10].Value.ToString();
+            cboJobRoleEdit.Text = dgvStaffList.Rows[selectedRow].Cells[12].Value.ToString();
+
+            AppTools.disableControlsGrb(grbEdit);
+            grbEdit.Text = "Staff N:" + selectedID;
+            grbOptions.Visible = true;
+            btnLogin.Visible = true;
+=======
         private void dgvStaffList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+>>>>>>> refs/remotes/origin/master
         }
 
         

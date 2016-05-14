@@ -157,6 +157,12 @@
     <Compile Include="frmSuppliersManagement.Designer.cs">
       <DependentUpon>frmSuppliersManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSuppliersProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSuppliersProducts.Designer.cs">
+      <DependentUpon>frmSuppliersProducts.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTechnicianHub.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSuppliersManagement.resx">
       <DependentUpon>frmSuppliersManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSuppliersProducts.resx">
+      <DependentUpon>frmSuppliersProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTechnicianHub.resx">
       <DependentUpon>frmTechnicianHub.cs</DependentUpon>
