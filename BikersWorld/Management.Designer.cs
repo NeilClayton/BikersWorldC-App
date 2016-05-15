@@ -81,6 +81,7 @@
             this.btnProductsManagement.TabIndex = 1;
             this.btnProductsManagement.Text = "&Products";
             this.btnProductsManagement.UseVisualStyleBackColor = true;
+            this.btnProductsManagement.Click += new System.EventHandler(this.btnProductsManagement_Click);
             // 
             // gbManagement
             // 

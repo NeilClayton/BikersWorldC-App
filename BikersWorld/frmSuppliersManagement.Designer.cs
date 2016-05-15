@@ -32,6 +32,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.lblEmailEdit = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.txtEmailEdit = new System.Windows.Forms.TextBox();
             this.lblTelephoneTwoEdit = new System.Windows.Forms.Label();
             this.txtTelephoneTwoEdit = new System.Windows.Forms.TextBox();
@@ -54,19 +55,18 @@
             this.labelSuppId = new System.Windows.Forms.Label();
             this.brnNew = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.grbOptions = new System.Windows.Forms.GroupBox();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.grbSearch = new System.Windows.Forms.GroupBox();
             this.btnReset = new System.Windows.Forms.Button();
+            this.pnlOptions = new System.Windows.Forms.Panel();
             this.grbEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuppList)).BeginInit();
-            this.grbOptions.SuspendLayout();
             this.grbSearch.SuspendLayout();
+            this.pnlOptions.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbEdit
             // 
+            this.grbEdit.Controls.Add(this.pnlOptions);
             this.grbEdit.Controls.Add(this.btnCancel);
             this.grbEdit.Controls.Add(this.btnSubmit);
             this.grbEdit.Controls.Add(this.lblEmailEdit);
@@ -122,6 +122,17 @@
             this.lblEmailEdit.Size = new System.Drawing.Size(32, 13);
             this.lblEmailEdit.TabIndex = 22;
             this.lblEmailEdit.Text = "Email";
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.Location = new System.Drawing.Point(4, 8);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 26;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // txtEmailEdit
             // 
@@ -293,7 +304,7 @@
             // 
             // brnNew
             // 
-            this.brnNew.Location = new System.Drawing.Point(460, 58);
+            this.brnNew.Location = new System.Drawing.Point(276, 102);
             this.brnNew.Name = "brnNew";
             this.brnNew.Size = new System.Drawing.Size(75, 23);
             this.brnNew.TabIndex = 38;
@@ -310,37 +321,6 @@
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(119, 19);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 27;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // grbOptions
-            // 
-            this.grbOptions.Controls.Add(this.btnDelete);
-            this.grbOptions.Controls.Add(this.btnEdit);
-            this.grbOptions.Location = new System.Drawing.Point(389, 87);
-            this.grbOptions.Name = "grbOptions";
-            this.grbOptions.Size = new System.Drawing.Size(211, 60);
-            this.grbOptions.TabIndex = 37;
-            this.grbOptions.TabStop = false;
-            this.grbOptions.Text = "Options";
-            this.grbOptions.Visible = false;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(23, 19);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 26;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // grbSearch
             // 
@@ -367,6 +347,14 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // pnlOptions
+            // 
+            this.pnlOptions.Controls.Add(this.btnEdit);
+            this.pnlOptions.Location = new System.Drawing.Point(481, 19);
+            this.pnlOptions.Name = "pnlOptions";
+            this.pnlOptions.Size = new System.Drawing.Size(85, 36);
+            this.pnlOptions.TabIndex = 39;
+            // 
             // frmSuppliersManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -375,7 +363,6 @@
             this.Controls.Add(this.grbEdit);
             this.Controls.Add(this.dgvSuppList);
             this.Controls.Add(this.brnNew);
-            this.Controls.Add(this.grbOptions);
             this.Controls.Add(this.grbSearch);
             this.Name = "frmSuppliersManagement";
             this.Text = "frmSuppliersManagement";
@@ -383,9 +370,9 @@
             this.grbEdit.ResumeLayout(false);
             this.grbEdit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuppList)).EndInit();
-            this.grbOptions.ResumeLayout(false);
             this.grbSearch.ResumeLayout(false);
             this.grbSearch.PerformLayout();
+            this.pnlOptions.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -418,10 +405,9 @@
         private System.Windows.Forms.Label labelSuppId;
         private System.Windows.Forms.Button brnNew;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.GroupBox grbOptions;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.GroupBox grbSearch;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Panel pnlOptions;
     }
 }

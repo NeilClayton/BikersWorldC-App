@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -82,6 +83,23 @@ namespace BikersWorld
 
         }
 
+        // method for converting a sting to MD5Hash
+        #region MD5 hash converter
+
+        public string getMD5Hash(string strPassword)
+        {
+
+            byte[] encodedPassword = new UTF8Encoding().GetBytes(strPassword);
+            byte[] hash = ((HashAlgorithm)CryptoConfig.CreateFromName("MD5")).ComputeHash(encodedPassword);
+
+            string encoded = BitConverter.ToString(hash).Replace("-", string.Empty).ToLower();
+            return encoded;
+
+        }
+        #endregion
+
+
+
         // Gets a list of job roles from the database to populate a combo box
         #region get data table based on the query sent ->getDataTable
         public DataTable getDataTable(string query)
@@ -126,7 +144,7 @@ namespace BikersWorld
 
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlDataReader dataReader = cmd.ExecuteReader();
-                MessageBox.Show("Employee has been Created");
+                MessageBox.Show("the submission was successful ");
 
                 while (dataReader.Read())
                 {
@@ -150,7 +168,7 @@ namespace BikersWorld
 
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlDataReader dataReader = cmd.ExecuteReader();
-                MessageBox.Show("Employee  has been Updated");
+                MessageBox.Show("the information has been Updated");
 
                 while (dataReader.Read())
                 {

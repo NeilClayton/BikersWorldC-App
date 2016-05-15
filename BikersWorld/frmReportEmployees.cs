@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BikersWorld
 {
-    public partial class frmSuppliersProducts : Form
+    public partial class frmReportEmployees : Form
     {
-        public frmSuppliersProducts()
+        public frmReportEmployees()
         {
             InitializeComponent();
         }

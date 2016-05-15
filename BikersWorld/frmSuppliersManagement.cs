@@ -26,10 +26,10 @@ namespace BikersWorld
         private void btnSearch_Click(object sender, EventArgs e)
         {
 
-            grbEdit.Text = "Supplier N:";
+          
             AppTools.ResetAllGrb(grbEdit);
             AppTools.disableControlsGrb(grbEdit);
-            grbOptions.Visible = false;
+            pnlOptions.Visible = false;
             btnSubmit.Visible = false;
 
 
@@ -51,7 +51,7 @@ namespace BikersWorld
             }
 
 
-
+            this.populatForm();
 
 
         }
@@ -64,6 +64,8 @@ namespace BikersWorld
         {
             dgvSuppList.DataSource = suppSearch.getAllSuppliers();
             AppTools.disableControlsGrb(grbEdit);
+            pnlOptions.Visible = false;
+            this.populatForm();
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -71,7 +73,7 @@ namespace BikersWorld
 
             
            
-            #region goup components andler 
+            #region group components handler 
             /*
              * 
              * code used to reset the content of the group boxes
@@ -81,7 +83,7 @@ namespace BikersWorld
             AppTools.ResetAllGrb(grbEdit);
             AppTools.ResetAllGrb(grbSearch);
             AppTools.disableControlsGrb(grbEdit);
-            grbOptions.Visible = false;
+            pnlOptions.Visible = false;
             btnSubmit.Visible = false;
             btnCancel.Visible = false;
 
@@ -93,15 +95,18 @@ namespace BikersWorld
              */
             dgvSuppList.DataSource = suppSearch.getAllSuppliers();
             #endregion
-           
-                
+
+            this.populatForm();
         }
 
         private void brnNew_Click(object sender, EventArgs e)
         {
             AppTools.ResetAllGrb(grbEdit);
             AppTools.enableControlsGrb(grbEdit);
+            btnSubmit.Visible = true;
+            btnCancel.Visible = true;
             switch_on = 1;
+            pnlOptions.Visible = false;
         }
 
        
@@ -114,30 +119,19 @@ namespace BikersWorld
             int selectedRow = dgvSuppList.CurrentRow.Index;
 
 
-            selectedID = dgvSuppList.Rows[selectedRow].Cells[0].Value.ToString();
-
-            txtSupplierNameEdit.Text = dgvSuppList.Rows[selectedRow].Cells[1].Value.ToString();
-
-            txtAddressLineOneEdit.Text = dgvSuppList.Rows[selectedRow].Cells[2].Value.ToString();
-            txtAddressLineTwoEdit.Text = dgvSuppList.Rows[selectedRow].Cells[3].Value.ToString();
-            txtAddressLineThreeEdit.Text = dgvSuppList.Rows[selectedRow].Cells[4].Value.ToString();
-            txtPostalCodeEdit.Text = dgvSuppList.Rows[selectedRow].Cells[5].Value.ToString();
-            txtTelephoneOneEdit.Text = dgvSuppList.Rows[selectedRow].Cells[6].Value.ToString();
-            txtTelephoneTwoEdit.Text = dgvSuppList.Rows[selectedRow].Cells[7].Value.ToString();
-            txtEmailEdit.Text = dgvSuppList.Rows[selectedRow].Cells[8].Value.ToString();
+            this.populatForm();
 
 
             AppTools.disableControlsGrb(grbEdit);
-            grbEdit.Text = "Staff N:" + selectedID;
-            grbOptions.Visible = true;
+            
+            pnlOptions.Visible = true;
           
-
 
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
+            pnlOptions.Visible = false;
             AppTools.enableControlsGrb(grbEdit);
             btnSubmit.Visible = true;
             btnCancel.Visible = true;
@@ -146,10 +140,13 @@ namespace BikersWorld
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            pnlOptions.Visible = true;
             btnSubmit.Visible = false;
             btnCancel.Visible = false;
             AppTools.disableControlsGrb(grbEdit);
+
+            
+                this.populatForm();
 
         }
 
@@ -192,8 +189,34 @@ namespace BikersWorld
 
         }
 
-     
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
 
-       
+
+
+        }
+
+        private  void populatForm()
+        {
+            if (dgvSuppList.SelectedRows.Count > 0)
+            {
+                int selectedRow = dgvSuppList.CurrentRow.Index;
+                selectedID = dgvSuppList.Rows[selectedRow].Cells[0].Value.ToString();
+
+                txtSupplierNameEdit.Text = dgvSuppList.Rows[selectedRow].Cells[1].Value.ToString();
+
+                txtAddressLineOneEdit.Text = dgvSuppList.Rows[selectedRow].Cells[2].Value.ToString();
+                txtAddressLineTwoEdit.Text = dgvSuppList.Rows[selectedRow].Cells[3].Value.ToString();
+                txtAddressLineThreeEdit.Text = dgvSuppList.Rows[selectedRow].Cells[4].Value.ToString();
+                txtPostalCodeEdit.Text = dgvSuppList.Rows[selectedRow].Cells[5].Value.ToString();
+                txtTelephoneOneEdit.Text = dgvSuppList.Rows[selectedRow].Cells[6].Value.ToString();
+                txtTelephoneTwoEdit.Text = dgvSuppList.Rows[selectedRow].Cells[7].Value.ToString();
+                txtEmailEdit.Text = dgvSuppList.Rows[selectedRow].Cells[8].Value.ToString();
+                grbEdit.Text = "Staff N:" + selectedID;
+                pnlOptions.Visible = true;
+            }
+    
+
+        }
     }
 }

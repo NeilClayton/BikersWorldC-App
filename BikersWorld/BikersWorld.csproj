@@ -127,6 +127,12 @@
     <Compile Include="frmOrders1.Designer.cs">
       <DependentUpon>frmOrders1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReportEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportEmployees.Designer.cs">
+      <DependentUpon>frmReportEmployees.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReportJob.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,11 +163,11 @@
     <Compile Include="frmSuppliersManagement.Designer.cs">
       <DependentUpon>frmSuppliersManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSuppliersProducts.cs">
+    <Compile Include="frmManagementProducts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSuppliersProducts.Designer.cs">
-      <DependentUpon>frmSuppliersProducts.cs</DependentUpon>
+    <Compile Include="frmManagementProducts.Designer.cs">
+      <DependentUpon>frmManagementProducts.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTechnicianHub.cs">
       <SubType>Form</SubType>
@@ -229,6 +235,9 @@
     <EmbeddedResource Include="frmOrders1.resx">
       <DependentUpon>frmOrders1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReportEmployees.resx">
+      <DependentUpon>frmReportEmployees.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReportJob.resx">
       <DependentUpon>frmReportJob.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,8 +253,8 @@
     <EmbeddedResource Include="frmSuppliersManagement.resx">
       <DependentUpon>frmSuppliersManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSuppliersProducts.resx">
-      <DependentUpon>frmSuppliersProducts.cs</DependentUpon>
+    <EmbeddedResource Include="frmManagementProducts.resx">
+      <DependentUpon>frmManagementProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTechnicianHub.resx">
       <DependentUpon>frmTechnicianHub.cs</DependentUpon>

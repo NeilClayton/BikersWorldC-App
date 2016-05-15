@@ -175,6 +175,33 @@ namespace BikersWorld
 
         #endregion
 
+        #region RF Methods
+        dbR rfDB = new dbR();
+        public DataTable getProducts(string query)
+        {
+
+           return dt = rfDB.getDataTable(query);
+
+
+        }
+        public void newProduct()
+        {
+            query = "INSERT INTO items (item_name, description, supplier_id, price, quantity) VALUE ('"+ItemName+"', '"+ItemDescription+"', "+ItemSupplierID+", "+ItemPrice+", "+ItemStock+" )";
+
+            rfDB.insert(query);
+
+        }
+
+        public void updateProducts()
+        {
+
+            query = "update items set item_name='"+ ItemName + "', description='"+ItemDescription+"', supplier_id="+ ItemSupplierID + ", price = "+ ItemPrice + ", quantity= "+ ItemStock + " where item_id="+itemID+" ";
+            rfDB.update(query);
+
+
+        }
+       
+        #endregion
 
     }
 }

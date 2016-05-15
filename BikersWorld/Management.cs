@@ -85,12 +85,18 @@ namespace BikersWorld
 
         private void btnEmployeeReports_Click(object sender, EventArgs e)
         {
-            
+            AppTools.formVerifyAndOpen<frmReportEmployees>("frmReportEmployees");
         }
 
         private void btnSalesReports_Click(object sender, EventArgs e)
         {
             AppTools.formVerifyAndOpen<frmReportSales>("frmReportSales");
+        }
+
+        private void btnProductsManagement_Click(object sender, EventArgs e)
+        {
+            AppTools.formVerifyAndOpen<frmManagementProducts>("frmManagementProducts");
+
         }
     }
 }
