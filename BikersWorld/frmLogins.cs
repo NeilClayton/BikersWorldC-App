@@ -100,7 +100,7 @@ namespace BikersWorld
 
                                 break;
                             case true:
-                                myDB.update("update login set password='" + password + "'");
+                                myDB.update("update login set password='" + password + "'WHERE employee_id="+ selectedID + "");
 
                                 break;
                         }
