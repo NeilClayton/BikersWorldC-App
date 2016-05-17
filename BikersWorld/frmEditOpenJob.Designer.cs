@@ -55,7 +55,6 @@
             this.txtDesc = new System.Windows.Forms.TextBox();
             this.lblDateLogged = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEditOpenJob)).BeginInit();
             this.grpJobSearch.SuspendLayout();
             this.grpEditJob.SuspendLayout();
@@ -140,7 +139,6 @@
             // 
             // grpEditJob
             // 
-            this.grpEditJob.Controls.Add(this.btnDelete);
             this.grpEditJob.Controls.Add(this.btnSubmit);
             this.grpEditJob.Controls.Add(this.btnEditClear);
             this.grpEditJob.Controls.Add(this.btnExit);
@@ -169,7 +167,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(745, 47);
+            this.btnSubmit.Location = new System.Drawing.Point(816, 47);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(74, 27);
             this.btnSubmit.TabIndex = 12;
@@ -179,7 +177,7 @@
             // 
             // btnEditClear
             // 
-            this.btnEditClear.Location = new System.Drawing.Point(745, 95);
+            this.btnEditClear.Location = new System.Drawing.Point(816, 95);
             this.btnEditClear.Name = "btnEditClear";
             this.btnEditClear.Size = new System.Drawing.Size(74, 27);
             this.btnEditClear.TabIndex = 13;
@@ -189,7 +187,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(745, 142);
+            this.btnExit.Location = new System.Drawing.Point(816, 142);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(74, 25);
             this.btnExit.TabIndex = 14;
@@ -208,7 +206,7 @@
             // 
             // txtCompletionDate
             // 
-            this.txtCompletionDate.Location = new System.Drawing.Point(535, 99);
+            this.txtCompletionDate.Location = new System.Drawing.Point(606, 99);
             this.txtCompletionDate.Mask = "00/00/0000 90:00";
             this.txtCompletionDate.Name = "txtCompletionDate";
             this.txtCompletionDate.Size = new System.Drawing.Size(190, 20);
@@ -226,7 +224,7 @@
             // 
             // txtEstimatedCompletionDate
             // 
-            this.txtEstimatedCompletionDate.Location = new System.Drawing.Point(535, 52);
+            this.txtEstimatedCompletionDate.Location = new System.Drawing.Point(606, 52);
             this.txtEstimatedCompletionDate.Mask = "00/00/0000 90:00";
             this.txtEstimatedCompletionDate.Name = "txtEstimatedCompletionDate";
             this.txtEstimatedCompletionDate.Size = new System.Drawing.Size(190, 20);
@@ -252,7 +250,7 @@
             this.combJobOpenClosed.Items.AddRange(new object[] {
             "Open",
             "Closed"});
-            this.combJobOpenClosed.Location = new System.Drawing.Point(535, 146);
+            this.combJobOpenClosed.Location = new System.Drawing.Point(606, 146);
             this.combJobOpenClosed.Name = "combJobOpenClosed";
             this.combJobOpenClosed.Size = new System.Drawing.Size(190, 21);
             this.combJobOpenClosed.TabIndex = 11;
@@ -269,7 +267,7 @@
             // lblJobOpenClosed
             // 
             this.lblJobOpenClosed.AutoSize = true;
-            this.lblJobOpenClosed.Location = new System.Drawing.Point(405, 146);
+            this.lblJobOpenClosed.Location = new System.Drawing.Point(476, 146);
             this.lblJobOpenClosed.Name = "lblJobOpenClosed";
             this.lblJobOpenClosed.Size = new System.Drawing.Size(90, 13);
             this.lblJobOpenClosed.TabIndex = 38;
@@ -278,7 +276,7 @@
             // lblCompletionDate
             // 
             this.lblCompletionDate.AutoSize = true;
-            this.lblCompletionDate.Location = new System.Drawing.Point(405, 99);
+            this.lblCompletionDate.Location = new System.Drawing.Point(476, 99);
             this.lblCompletionDate.Name = "lblCompletionDate";
             this.lblCompletionDate.Size = new System.Drawing.Size(89, 13);
             this.lblCompletionDate.TabIndex = 37;
@@ -296,7 +294,7 @@
             // lblEstimatedCompletionDate
             // 
             this.lblEstimatedCompletionDate.AutoSize = true;
-            this.lblEstimatedCompletionDate.Location = new System.Drawing.Point(406, 46);
+            this.lblEstimatedCompletionDate.Location = new System.Drawing.Point(477, 46);
             this.lblEstimatedCompletionDate.Name = "lblEstimatedCompletionDate";
             this.lblEstimatedCompletionDate.Size = new System.Drawing.Size(89, 26);
             this.lblEstimatedCompletionDate.TabIndex = 36;
@@ -337,15 +335,6 @@
             this.lblDescription.Size = new System.Drawing.Size(60, 13);
             this.lblDescription.TabIndex = 42;
             this.lblDescription.Text = "Description";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(850, 85);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(74, 27);
-            this.btnDelete.TabIndex = 17;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // frmEditOpenJob
             // 
@@ -396,6 +385,5 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnEditClear;
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Button btnDelete;
     }
 }
