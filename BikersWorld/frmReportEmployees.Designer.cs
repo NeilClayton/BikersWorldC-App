@@ -35,7 +35,7 @@
             this.chartSales = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.lblShartSales = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnListEmployees = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.chartJobs = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -67,14 +67,15 @@
             this.lblShartSales.TabIndex = 1;
             this.lblShartSales.Text = "Employee Sales";
             // 
-            // button1
+            // btnListEmployees
             // 
-            this.button1.Location = new System.Drawing.Point(426, 63);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "List of Emplyes";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnListEmployees.Location = new System.Drawing.Point(426, 63);
+            this.btnListEmployees.Name = "btnListEmployees";
+            this.btnListEmployees.Size = new System.Drawing.Size(119, 23);
+            this.btnListEmployees.TabIndex = 2;
+            this.btnListEmployees.Text = "List of Emplyees";
+            this.btnListEmployees.UseVisualStyleBackColor = true;
+            this.btnListEmployees.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -94,6 +95,7 @@
             this.button3.TabIndex = 4;
             this.button3.Text = "List of Sales Personal";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // chartJobs
             // 
@@ -126,7 +128,7 @@
             this.Controls.Add(this.chartJobs);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnListEmployees);
             this.Controls.Add(this.lblShartSales);
             this.Controls.Add(this.chartSales);
             this.Name = "frmReportEmployees";
@@ -144,7 +146,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartSales;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label lblShartSales;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnListEmployees;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartJobs;

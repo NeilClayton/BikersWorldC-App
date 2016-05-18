@@ -34,17 +34,7 @@ namespace BikersWorld
 
         }
 
-        private void productsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Management_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void stockControlToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
