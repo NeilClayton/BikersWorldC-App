@@ -502,6 +502,28 @@ namespace BikersWorld
 
     }
 
+        public DataTable getAllOrders(string query)
+        {
+            DataTable dt = new DataTable();
+
+            if (this.openConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                dt.Load(dataReader);
+                dataReader.Close();
+                this.closeConnection();
+                return dt;
+            }
+            else
+            {
+                MessageBox.Show("An unexpected error has occured. Please contact your Network Administrator", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+            return null;
+        }
+
 
     }
 

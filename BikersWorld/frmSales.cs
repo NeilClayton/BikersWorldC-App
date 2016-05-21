@@ -47,11 +47,7 @@ namespace BikersWorld
 
         private void btnAdd_Click_1(object sender, EventArgs e)
         {
-            frmAddCustomer form3 = new frmAddCustomer();
-
-            this.Hide();
-
-            form3.ShowDialog();
+            AppTools.formVerifyAndOpen<frmAddNewCustomer>("frmAddNewCustomer");
 
 
         }

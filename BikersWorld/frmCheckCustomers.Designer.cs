@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.bntCheck = new System.Windows.Forms.Button();
+            this.bntClose = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
             this.lblPostcode = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -43,18 +43,23 @@
             this.addCustomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkCostomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblTelephone = new System.Windows.Forms.Label();
+            this.txtTel = new System.Windows.Forms.TextBox();
+            this.btnCheck = new System.Windows.Forms.Button();
+            this.dvgCostumers = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgCostumers)).BeginInit();
             this.SuspendLayout();
             // 
-            // bntCheck
+            // bntClose
             // 
-            this.bntCheck.Location = new System.Drawing.Point(664, 322);
-            this.bntCheck.Name = "bntCheck";
-            this.bntCheck.Size = new System.Drawing.Size(125, 44);
-            this.bntCheck.TabIndex = 0;
-            this.bntCheck.Text = "Check";
-            this.bntCheck.UseVisualStyleBackColor = true;
-            this.bntCheck.Click += new System.EventHandler(this.bntCheck_Click);
+            this.bntClose.Location = new System.Drawing.Point(664, 322);
+            this.bntClose.Name = "bntClose";
+            this.bntClose.Size = new System.Drawing.Size(125, 44);
+            this.bntClose.TabIndex = 0;
+            this.bntClose.Text = "Close";
+            this.bntClose.UseVisualStyleBackColor = true;
+            this.bntClose.Click += new System.EventHandler(this.bntCheck_Click);
             // 
             // lblName
             // 
@@ -169,24 +174,64 @@
             this.ordersToolStripMenuItem.Text = "orders";
             this.ordersToolStripMenuItem.Click += new System.EventHandler(this.ordersToolStripMenuItem_Click);
             // 
+            // lblTelephone
+            // 
+            this.lblTelephone.AutoSize = true;
+            this.lblTelephone.Location = new System.Drawing.Point(94, 135);
+            this.lblTelephone.Name = "lblTelephone";
+            this.lblTelephone.Size = new System.Drawing.Size(48, 13);
+            this.lblTelephone.TabIndex = 8;
+            this.lblTelephone.Text = "telphone";
+            // 
+            // txtTel
+            // 
+            this.txtTel.Location = new System.Drawing.Point(164, 127);
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(100, 20);
+            this.txtTel.TabIndex = 9;
+            // 
+            // btnCheck
+            // 
+            this.btnCheck.Location = new System.Drawing.Point(724, 91);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(58, 32);
+            this.btnCheck.TabIndex = 10;
+            this.btnCheck.Text = "Check";
+            this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
+            // 
+            // dvgCostumers
+            // 
+            this.dvgCostumers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgCostumers.Location = new System.Drawing.Point(46, 153);
+            this.dvgCostumers.Name = "dvgCostumers";
+            this.dvgCostumers.Size = new System.Drawing.Size(736, 150);
+            this.dvgCostumers.TabIndex = 11;
+            // 
             // frmCheckCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(803, 383);
+            this.Controls.Add(this.dvgCostumers);
+            this.Controls.Add(this.btnCheck);
+            this.Controls.Add(this.txtTel);
+            this.Controls.Add(this.lblTelephone);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.txtPostcode);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblPostcode);
             this.Controls.Add(this.lblName);
-            this.Controls.Add(this.bntCheck);
+            this.Controls.Add(this.bntClose);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmCheckCustomers";
             this.Text = "check coustmers";
+            this.Load += new System.EventHandler(this.frmCheckCustomers_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgCostumers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,7 +239,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button bntCheck;
+        private System.Windows.Forms.Button bntClose;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblPostcode;
         private System.Windows.Forms.TextBox txtName;
@@ -209,5 +254,9 @@
         private System.Windows.Forms.ToolStripMenuItem addCustomersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem checkCostomersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ordersToolStripMenuItem;
+        private System.Windows.Forms.Label lblTelephone;
+        private System.Windows.Forms.TextBox txtTel;
+        private System.Windows.Forms.Button btnCheck;
+        private System.Windows.Forms.DataGridView dvgCostumers;
     }
 }

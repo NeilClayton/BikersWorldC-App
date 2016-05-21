@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppTools.cs" />
+    <Compile Include="dbB.cs" />
     <Compile Include="dbEW.cs" />
     <Compile Include="dbNC.cs" />
     <Compile Include="dbR.cs" />
