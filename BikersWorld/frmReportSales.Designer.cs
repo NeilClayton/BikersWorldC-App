@@ -34,22 +34,19 @@
             this.grpMonthlySalesComparasion = new System.Windows.Forms.GroupBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.grpSalesPresonReport = new System.Windows.Forms.GroupBox();
+            this.btnRunSalesPerson = new System.Windows.Forms.Button();
             this.cboSalesPerson = new System.Windows.Forms.ComboBox();
             this.dtpSalePersonEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpSalesPersonStart = new System.Windows.Forms.DateTimePicker();
             this.grpReportByProduct = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.grpMonthlyComparasion = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.btnRunSalesPerson = new System.Windows.Forms.Button();
+            this.btnRunProductReport = new System.Windows.Forms.Button();
+            this.cboProducts = new System.Windows.Forms.ComboBox();
+            this.dtpProductEnd = new System.Windows.Forms.DateTimePicker();
+            this.dtpProductStart = new System.Windows.Forms.DateTimePicker();
             this.grpMonthlySalesComparasion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.grpSalesPresonReport.SuspendLayout();
             this.grpReportByProduct.SuspendLayout();
-            this.grpMonthlyComparasion.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpMonthlySalesComparasion
@@ -58,7 +55,7 @@
             this.grpMonthlySalesComparasion.Cursor = System.Windows.Forms.Cursors.Default;
             this.grpMonthlySalesComparasion.Location = new System.Drawing.Point(13, 13);
             this.grpMonthlySalesComparasion.Name = "grpMonthlySalesComparasion";
-            this.grpMonthlySalesComparasion.Size = new System.Drawing.Size(458, 574);
+            this.grpMonthlySalesComparasion.Size = new System.Drawing.Size(458, 361);
             this.grpMonthlySalesComparasion.TabIndex = 0;
             this.grpMonthlySalesComparasion.TabStop = false;
             this.grpMonthlySalesComparasion.Text = "Sales Comparasion By Month";
@@ -75,7 +72,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(445, 548);
+            this.chart1.Size = new System.Drawing.Size(445, 341);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
@@ -91,6 +88,16 @@
             this.grpSalesPresonReport.TabIndex = 1;
             this.grpSalesPresonReport.TabStop = false;
             this.grpSalesPresonReport.Text = "Sales Person Report";
+            // 
+            // btnRunSalesPerson
+            // 
+            this.btnRunSalesPerson.Location = new System.Drawing.Point(283, 120);
+            this.btnRunSalesPerson.Name = "btnRunSalesPerson";
+            this.btnRunSalesPerson.Size = new System.Drawing.Size(167, 23);
+            this.btnRunSalesPerson.TabIndex = 3;
+            this.btnRunSalesPerson.Text = "Get &Sales Person Report";
+            this.btnRunSalesPerson.UseVisualStyleBackColor = true;
+            this.btnRunSalesPerson.Click += new System.EventHandler(this.btnRunSalesPerson_Click);
             // 
             // cboSalesPerson
             // 
@@ -116,9 +123,10 @@
             // 
             // grpReportByProduct
             // 
-            this.grpReportByProduct.Controls.Add(this.comboBox1);
-            this.grpReportByProduct.Controls.Add(this.dateTimePicker4);
-            this.grpReportByProduct.Controls.Add(this.dateTimePicker3);
+            this.grpReportByProduct.Controls.Add(this.btnRunProductReport);
+            this.grpReportByProduct.Controls.Add(this.cboProducts);
+            this.grpReportByProduct.Controls.Add(this.dtpProductEnd);
+            this.grpReportByProduct.Controls.Add(this.dtpProductStart);
             this.grpReportByProduct.Location = new System.Drawing.Point(478, 181);
             this.grpReportByProduct.Name = "grpReportByProduct";
             this.grpReportByProduct.Size = new System.Drawing.Size(512, 193);
@@ -126,69 +134,43 @@
             this.grpReportByProduct.TabStop = false;
             this.grpReportByProduct.Text = "Report by Product";
             // 
-            // comboBox1
+            // btnRunProductReport
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 166);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 21);
-            this.comboBox1.TabIndex = 2;
+            this.btnRunProductReport.Location = new System.Drawing.Point(283, 128);
+            this.btnRunProductReport.Name = "btnRunProductReport";
+            this.btnRunProductReport.Size = new System.Drawing.Size(167, 23);
+            this.btnRunProductReport.TabIndex = 3;
+            this.btnRunProductReport.Text = "Get &Product Sales Report";
+            this.btnRunProductReport.UseVisualStyleBackColor = true;
+            this.btnRunProductReport.Click += new System.EventHandler(this.btnRunProductReport_Click);
             // 
-            // dateTimePicker4
+            // cboProducts
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(7, 112);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker4.TabIndex = 1;
+            this.cboProducts.FormattingEnabled = true;
+            this.cboProducts.Location = new System.Drawing.Point(7, 128);
+            this.cboProducts.Name = "cboProducts";
+            this.cboProducts.Size = new System.Drawing.Size(200, 21);
+            this.cboProducts.TabIndex = 2;
             // 
-            // dateTimePicker3
+            // dtpProductEnd
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(7, 50);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker3.TabIndex = 0;
+            this.dtpProductEnd.Location = new System.Drawing.Point(7, 80);
+            this.dtpProductEnd.Name = "dtpProductEnd";
+            this.dtpProductEnd.Size = new System.Drawing.Size(200, 20);
+            this.dtpProductEnd.TabIndex = 1;
             // 
-            // grpMonthlyComparasion
+            // dtpProductStart
             // 
-            this.grpMonthlyComparasion.Controls.Add(this.dateTimePicker2);
-            this.grpMonthlyComparasion.Controls.Add(this.dateTimePicker1);
-            this.grpMonthlyComparasion.Location = new System.Drawing.Point(478, 381);
-            this.grpMonthlyComparasion.Name = "grpMonthlyComparasion";
-            this.grpMonthlyComparasion.Size = new System.Drawing.Size(512, 206);
-            this.grpMonthlyComparasion.TabIndex = 3;
-            this.grpMonthlyComparasion.TabStop = false;
-            this.grpMonthlyComparasion.Text = "Month Sales Comparasion";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(7, 141);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 1;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(6, 67);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 0;
-            // 
-            // btnRunSalesPerson
-            // 
-            this.btnRunSalesPerson.Location = new System.Drawing.Point(283, 120);
-            this.btnRunSalesPerson.Name = "btnRunSalesPerson";
-            this.btnRunSalesPerson.Size = new System.Drawing.Size(167, 23);
-            this.btnRunSalesPerson.TabIndex = 3;
-            this.btnRunSalesPerson.Text = "Get &Sales Person Report";
-            this.btnRunSalesPerson.UseVisualStyleBackColor = true;
-            this.btnRunSalesPerson.Click += new System.EventHandler(this.btnRunSalesPerson_Click);
+            this.dtpProductStart.Location = new System.Drawing.Point(7, 34);
+            this.dtpProductStart.Name = "dtpProductStart";
+            this.dtpProductStart.Size = new System.Drawing.Size(200, 20);
+            this.dtpProductStart.TabIndex = 0;
             // 
             // frmReportSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(995, 600);
-            this.Controls.Add(this.grpMonthlyComparasion);
+            this.ClientSize = new System.Drawing.Size(995, 386);
             this.Controls.Add(this.grpReportByProduct);
             this.Controls.Add(this.grpSalesPresonReport);
             this.Controls.Add(this.grpMonthlySalesComparasion);
@@ -199,7 +181,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.grpSalesPresonReport.ResumeLayout(false);
             this.grpReportByProduct.ResumeLayout(false);
-            this.grpMonthlyComparasion.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -213,12 +194,10 @@
         private System.Windows.Forms.DateTimePicker dtpSalePersonEnd;
         private System.Windows.Forms.DateTimePicker dtpSalesPersonStart;
         private System.Windows.Forms.GroupBox grpReportByProduct;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.GroupBox grpMonthlyComparasion;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox cboProducts;
+        private System.Windows.Forms.DateTimePicker dtpProductEnd;
+        private System.Windows.Forms.DateTimePicker dtpProductStart;
         private System.Windows.Forms.Button btnRunSalesPerson;
+        private System.Windows.Forms.Button btnRunProductReport;
     }
 }

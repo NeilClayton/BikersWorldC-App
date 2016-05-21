@@ -88,5 +88,10 @@ namespace BikersWorld
         {
 
         }
+
+        private void btnAddOrder_Click(object sender, EventArgs e)
+        {
+            AppTools.formVerifyAndOpen<frmProcessSale>("frmProcessSale");
+        }
     }
 }

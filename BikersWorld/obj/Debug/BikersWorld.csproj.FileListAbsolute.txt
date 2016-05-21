@@ -91,3 +91,4 @@ I:\BikersWorldC-App\BikersWorld\obj\Debug\BikersWorld.frmStaffManagement.resourc
 I:\BikersWorldC-App\BikersWorld\obj\Debug\BikersWorld.frmLogin.resources
 I:\BikersWorldC-App\BikersWorld\obj\Debug\BikersWorld.Properties.Resources.resources
 I:\BikersWorldC-App\BikersWorld\obj\Debug\BikersWorld.csproj.GenerateResource.Cache
+I:\BikersWorldC-App\BikersWorld\obj\Debug\BikersWorld.frmProcessSale.resources

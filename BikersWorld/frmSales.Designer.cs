@@ -154,6 +154,7 @@
             this.btnAddOrder.TabIndex = 4;
             this.btnAddOrder.Text = "A&dd Order";
             this.btnAddOrder.UseVisualStyleBackColor = true;
+            this.btnAddOrder.Click += new System.EventHandler(this.btnAddOrder_Click);
             // 
             // frmSales
             // 
