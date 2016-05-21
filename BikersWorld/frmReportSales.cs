@@ -17,6 +17,7 @@ namespace BikersWorld
             InitializeComponent();
         }
         Employee employee = new Employee();
+        Item item = new Item();
         DataTable dt = new DataTable();
         salesNC sales = new salesNC();
         private void frmReportSales_Load(object sender, EventArgs e)
@@ -29,7 +30,19 @@ namespace BikersWorld
             }
 
             cboSalesPerson.SelectedIndex = 0;
+
+            
+            dt = item.getItems();
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                cboProducts.Items.Add(dt.Rows[i]["item_id"] + " " + dt.Rows[i]["item_name"]);
+            }
+
+            cboProducts.SelectedIndex = 0;            
         }
+        
+        
 
         private void btnRunSalesPerson_Click(object sender, EventArgs e)
         {
@@ -44,6 +57,23 @@ namespace BikersWorld
 
             sales.reportSalesPerson(employeeID, concatenatedName, start, end);
 
+        }
+
+        private void btnRunProductReport_Click(object sender, EventArgs e)
+        {
+            string selectedItem = cboProducts.Text.ToString();
+
+            string[] split = selectedItem.Split(null);
+            int itemID = Convert.ToInt16(split[0]);
+            string itemName = "";
+            for (int i = 1; i < split.Length - 1; i++)
+            {
+                itemName += " " + split[i].ToString();
+            }
+            string start = dtpProductStart.Value.ToString("yyyy/MM/dd");
+            string end = dtpProductEnd.Value.ToString("yyyy/MM/dd");
+
+            sales.reportProduct(itemID, itemName, start, end);
         }
     }
 }

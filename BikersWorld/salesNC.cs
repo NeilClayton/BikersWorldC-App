@@ -15,6 +15,8 @@ namespace BikersWorld
         string query;
         DataTable dt = new DataTable();
         dbNC accessDB = new dbNC();
+
+
         public void reportSalesPerson(int id, string name, string start, string end) {
             query = "SELECT * FROM sales WHERE employee_id = " + id + " AND date >= '" + start + "' AND date <= '" + end + "'";
 
@@ -99,6 +101,83 @@ namespace BikersWorld
             Process.Start("WINWORD.EXE", fileName);
 
 
+        }
+
+        public void reportProduct(int id, string name, string start, string end)
+        {
+            query = "SELECT * FROM sales WHERE item_id = " + id + " AND date >= '" + start + "' AND date <= '" + end + "'";
+
+            dt = accessDB.individualPersonSales(query);
+
+            // inform user where file is to be saved
+            MessageBox.Show("This document will be saved as default to your desktop", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string fileName = path + "\\" + name + "SaleReport.docx";
+            var doc = DocX.Create(fileName);
+            doc.PageLayout.Orientation = Novacode.Orientation.Landscape;
+            var company = doc.InsertParagraph("Biker's World");
+            company.StyleName = "Heading1";
+            doc.InsertParagraph();
+            doc.InsertParagraph("Report Type: \tProduct " + name + " Sale Report");
+            doc.InsertParagraph();
+            doc.InsertParagraph("Printed: \t" + DateTime.Now);
+            doc.InsertParagraph();
+            doc.InsertParagraph("Description: \tThis report details the sale of Product " + name + " from " + start + " to " + end);
+            doc.InsertParagraph();
+
+
+            int rows = dt.Rows.Count;
+            int columns = 5;
+            Table brief = doc.AddTable(2, columns);
+            brief.Alignment = Alignment.center;
+            brief.Design = TableDesign.MediumGrid1Accent5;
+
+            brief.Rows[0].Cells[0].Paragraphs.First().Append("Item ID");
+            brief.Rows[0].Cells[1].Paragraphs.First().Append("Item Name");
+            brief.Rows[0].Cells[2].Paragraphs.First().Append("Start Date");
+            brief.Rows[0].Cells[3].Paragraphs.First().Append("End Date");
+            brief.Rows[0].Cells[4].Paragraphs.First().Append("Total Sales");
+
+            brief.Rows[1].Cells[0].Paragraphs.First().Append(id.ToString());
+            brief.Rows[1].Cells[1].Paragraphs.First().Append(name);
+            brief.Rows[1].Cells[2].Paragraphs.First().Append(start);
+            brief.Rows[1].Cells[3].Paragraphs.First().Append(end);
+            brief.Rows[1].Cells[4].Paragraphs.First().Append(dt.Rows.Count.ToString());
+
+
+            Table t = doc.AddTable(brief.Rows.Count, 5);
+            t.Alignment = Alignment.center;
+            t.Design = TableDesign.MediumGrid1Accent5;
+
+            t.Rows[0].Cells[0].Paragraphs.First().Append("Sale ID");
+            t.Rows[0].Cells[1].Paragraphs.First().Append("Customer ID");
+            t.Rows[0].Cells[2].Paragraphs.First().Append("Quantity");
+            t.Rows[0].Cells[3].Paragraphs.First().Append("Employee ID");
+            t.Rows[0].Cells[4].Paragraphs.First().Append("Date");
+            
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                
+                        t.Rows[i + 1].Cells[0].Paragraphs.First().Append(dt.Rows[i]["sales_id"].ToString());
+                        t.Rows[i + 1].Cells[1].Paragraphs.First().Append(dt.Rows[i]["customer_id"].ToString());
+                        t.Rows[i + 1].Cells[2].Paragraphs.First().Append(dt.Rows[i]["quantity"].ToString());
+                        t.Rows[i + 1].Cells[3].Paragraphs.First().Append(dt.Rows[i]["employee_id"].ToString());
+                        t.Rows[i + 1].Cells[4].Paragraphs.First().Append(dt.Rows[i]["date"].ToString());
+                        
+                    
+                
+
+            }
+
+
+
+            doc.InsertTable(brief);
+            doc.InsertParagraph();
+            doc.InsertTable(t);
+            doc.Save();
+
+            Process.Start("WINWORD.EXE", fileName);
         }
 
     }

@@ -179,13 +179,11 @@ namespace BikersWorld
             switch (type)
             {
                 case "Month":
-                    //DateTime moment = new DateTime();
-                    //int thisMonth = moment.Month;
-                    //query = "SELECT * FROM jobs WHERE MONTH(date_logged) = " + thisMonth.ToString() + " AND job_open_close = 2";
+                    DateTime moment = new DateTime();
+                    int thisMonth = moment.Month;
+                    query = "SELECT * FROM jobs WHERE MONTH(date_logged) = " + thisMonth.ToString() + " AND job_open_close = 2";
 
-                    //this is a test query delete when finished //////////////////////////////////////
-                    query = "SELECT * FROM jobs WHERE MONTH(date_logged) = 12 AND job_open_close = 2";
-                    /////////////////////////////////////////////////////////////////////////////////
+                   
 
                     dt = accessdbNC.getJobStatistics(query);
 
@@ -206,11 +204,8 @@ namespace BikersWorld
                 case "Month":
                     DateTime moment = new DateTime();
                     int thisMonth = moment.Month;
-                    //query = "SELECT * FROM jobs WHERE MONTH(date_logged) = " + thisMonth.ToString() + " AND job_open_close = 1";
-
-                    //this is a test query delete when finished //////////////////////////////////////
-                    query = "SELECT * FROM jobs WHERE MONTH(date_logged) = 1 AND job_open_close = 1";
-                    /////////////////////////////////////////////////////////////////////////////////
+                    query = "SELECT * FROM jobs WHERE MONTH(date_logged) = " + thisMonth.ToString() + " AND job_open_close = 1";
+                                       
 
                     dt = accessdbNC.getJobStatistics(query);
                     break;

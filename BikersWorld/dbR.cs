@@ -35,7 +35,7 @@ namespace BikersWorld
             server = "localhost";
             database = "bikersworld";
             uid = "root";
-            password = "usbw";
+            password = "Crumpet69";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 

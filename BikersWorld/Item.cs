@@ -200,8 +200,24 @@ namespace BikersWorld
 
 
         }
-       
+
         #endregion
+
+        public DataTable getItems()
+        {
+            string query = "SELECT item_id, item_name FROM items";
+
+            try
+            {
+                dt = accessDB.getItems(query);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Oops! Something went wrong, try again. If problem persists please contact your Network Administrator", "Internal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return dt;
+        }
 
     }
 }
