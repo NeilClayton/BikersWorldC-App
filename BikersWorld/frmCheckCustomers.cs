@@ -12,6 +12,11 @@ namespace BikersWorld
 {
     public partial class frmCheckCustomers : Form
     {
+
+        dbB newDB = new dbB();
+        DataTable newGrid = new DataTable();
+        string query = "";
+
         public frmCheckCustomers()
         {
             InitializeComponent();
@@ -19,7 +24,9 @@ namespace BikersWorld
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            frmSales form1 = new frmSales();
+            this.Hide();
+            form1.Show();
         }
 
         private void addCustomersToolStripMenuItem_Click(object sender, EventArgs e)
@@ -48,7 +55,7 @@ namespace BikersWorld
         {
 
             frmSales form1 = new frmSales();
-this.Hide();
+            this.Hide();
             form1.Show();  
         }
 
@@ -58,6 +65,36 @@ this.Hide();
             frmSales form1 = new frmSales();
             this.Hide();
             form1.Show();  
+        }
+
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtName.Text) && string.IsNullOrWhiteSpace(txtPostcode.Text) && string.IsNullOrWhiteSpace(txtId.Text) && string.IsNullOrWhiteSpace(txtTel.Text))
+            {
+
+
+
+
+                MessageBox.Show("please insert a valid value");
+
+            }
+            else
+            {
+                query = "SELECT * FROM  customer WHERE customer_id LIKE '" + txtId.Text + "' OR postcode LIKE '" + txtPostcode.Text + "' OR forename LIKE '" + txtName.Text + "'OR telephone_1 LIKE'" + txtTel.Text + "'";
+
+
+                newGrid = newDB.getDataTable(query);
+                dvgCostumers.DataSource = newGrid;
+
+            }
+        }
+
+        private void frmCheckCustomers_Load(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM  customer";
+
+            newGrid = newDB.getDataTable(query);
+            dvgCostumers.DataSource = newGrid;
         }
     }
 }

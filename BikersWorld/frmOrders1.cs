@@ -12,6 +12,9 @@ namespace BikersWorld
 {
     public partial class frmOrders1 : Form
     {
+        sale sale = new sale();
+        DataTable dt = new DataTable();
+
         public frmOrders1()
         {
             InitializeComponent();
@@ -56,6 +59,12 @@ namespace BikersWorld
             this.Hide ();
             form1.Show();  
  
+        }
+
+        private void frmOrders1_Load(object sender, EventArgs e)
+        {
+            dt = sale.getfrmOrders1();
+            dgvOrders.DataSource = dt;
         }
     }
 }
