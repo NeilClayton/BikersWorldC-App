@@ -15,7 +15,12 @@ namespace BikersWorld
         dbB newDB = new dbB();
         DataTable newGrid = new DataTable();
         Item items = new Item();
+        sale thisSale = new sale();
         Customer thisCustomer = new Customer();
+        List<int> shoppingCartItem = new List<int>();
+        List<int> itemQuantity = new List<int>();
+
+
         public frmProcessSale()
         {
             InitializeComponent();
@@ -85,6 +90,7 @@ namespace BikersWorld
             if (int.TryParse(txtQuantity.Text, out quantity)){
                 
                 lstItemsOrdered.Items.Add(lblSelectedID.Text + " - " + lblSelectedName.Text + " - Qty: " + txtQuantity.Text);
+                addToBasket(Convert.ToInt32(lblSelectedID.Text), Convert.ToInt32(txtQuantity.Text));
                 txtQuantity.Text = "";
                 btnProcessOrder.Enabled = true;
             }
@@ -130,6 +136,37 @@ namespace BikersWorld
             txtQuantity.Enabled = false;
             btnAdd.Enabled = false;
         }
+
+        /// <summary>
+        /// Used to build a shopping cart of items
+        /// </summary>
+        /// <param name="itemID"></param>
+        /// <param name="quantity"></param>
+        public void addToBasket(int itemID, int quantity)
+        {
+            shoppingCartItem.Add(itemID);
+            itemQuantity.Add(quantity);
+        }
+
+        public void clearBasket()
+        {
+            shoppingCartItem.Clear();
+            itemQuantity.Clear();
+        }
+
+        private void btnProcessOrder_Click(object sender, EventArgs e)
+        {
+            //grab customer id and insert into sales
+            //sales ID item id and quantity
+
+
+            thisSale.addSale(thisCustomer.CustomerID, shoppingCartItem, itemQuantity);
+            MessageBox.Show("Order placed");
+            lstItemsOrdered.Items.Clear();
+            clearBasket();
+        }
+
+      
     }
 
 

@@ -45,9 +45,9 @@ namespace BikersWorld
             server = "localhost";
             database = "bikersworld";
             uid = "root";
-            password = "Crumpet69";
+            password = "usbw";
             string connectionString;
-            connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+            connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + "; Allow User Variables=True";
 
             connection = new MySqlConnection(connectionString);
         }
@@ -542,6 +542,24 @@ namespace BikersWorld
 
             return dt;
         }
+
+        public void insertIntoDB(string query)
+        {
+            if (this.openConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                //MySqlDataReader dataReader = cmd.ExecuteReader();
+                this.closeConnection();
+                
+            }
+            else
+            {
+                MessageBox.Show("Some error has occur when connecting to the database, please contact your Network Administrator");
+            }
+        }
+
+       
     }
 
 

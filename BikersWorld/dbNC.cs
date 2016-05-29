@@ -39,7 +39,7 @@ namespace BikersWorld
             server = "localhost";
             database = "bikersworld";
             uid = "root";
-            password = "Crumpet69";
+            password = "usbw";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + "; Convert Zero Datetime=True";
 

@@ -11,6 +11,7 @@ namespace BikersWorld
 
         DataTable dt = new DataTable();
         db accessDB = new db();
+        string query;
 
         public int SalesID
         {
@@ -81,12 +82,34 @@ namespace BikersWorld
         public DataTable getfrmOrders1()
         {
 
-            string query = "SELECT sales.sales_id, items.item_id,item_name, sales.quantity, customer.customer_id, title, forename, surname, sales.date FROM orderline LEFT JOIN sales ON orderline.sales_id = sales.sales_id LEFT JOIN items ON orderline.item_id = items.item_id LEFT JOIN customer ON sales.customer_id = customer.customer_id";
+                    
+            query = "SELECT sales.sales_id, items.item_id,item_name, orderline.quantity, customer.customer_id, title, forename, surname, sales.date FROM orderline LEFT JOIN sales ON orderline.sales_id = sales.sales_id LEFT JOIN items ON orderline.item_id = items.item_id LEFT JOIN customer ON sales.customer_id = customer.customer_id";
             dt = accessDB.getAllOrders(query);
             //dt = sale.Populate_dvgOrders();
             return dt;
 
-
         }
+
+        public void addSale(int customerID, List<int> cartItems, List<int> cartQuantities)
+        {
+            string items = "";
+            for (int i = 0; i < cartItems.Count; i++)
+            {
+                if (i < cartItems.Count - 1)
+                {
+                    items += " (@last_id_in_sales, " + cartItems[i] + ", " + cartQuantities[i] + "),";
+                }
+                else
+                {
+                    items += " (@last_id_in_sales, " + cartItems[i] + ", " + cartQuantities[i] + ")";
+                }
+            }
+            query = "INSERT INTO bikersworld.sales (customer_id) VALUES (" + customerID + "); SET @last_id_in_sales = LAST_INSERT_ID(); INSERT INTO bikersworld.orderline (sales_id, item_id, quantity) VALUES "+ items +";";
+            accessDB.insertIntoDB(query);
+            
+
+            
+        }
+
     }
 }
