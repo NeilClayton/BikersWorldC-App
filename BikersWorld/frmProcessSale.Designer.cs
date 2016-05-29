@@ -176,6 +176,7 @@
             this.dgvCustomers.Size = new System.Drawing.Size(569, 123);
             this.dgvCustomers.TabIndex = 0;
             this.dgvCustomers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_CellClick);
+
             // 
             // grpItems
             // 
@@ -332,6 +333,7 @@
             this.btnProcessOrder.TabIndex = 3;
             this.btnProcessOrder.Text = "Process Order";
             this.btnProcessOrder.UseVisualStyleBackColor = true;
+            this.btnProcessOrder.Click += new System.EventHandler(this.btnProcessOrder_Click);
             // 
             // frmProcessSale
             // 

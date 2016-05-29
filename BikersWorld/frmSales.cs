@@ -24,7 +24,7 @@ namespace BikersWorld
         {
             // frmSales form1 = new frmSales(); 
             frmCheckCustomers form4 = new frmCheckCustomers();
-            this.Hide(); 
+             
             form4.Show();
             //
             //frmSales.  
@@ -34,7 +34,7 @@ namespace BikersWorld
         {
 
             frmOrders1 form5 = new frmOrders1();
- this.Hide();
+
             form5.Show();
            
             

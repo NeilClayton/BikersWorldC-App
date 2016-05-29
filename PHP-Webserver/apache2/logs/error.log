@@ -1,8 +1,10 @@
-[Mon May 09 16:47:07 2016] [notice] Apache/2.2.21 (Win32) PHP/5.3.9 configured -- resuming normal operations
-[Mon May 09 16:47:07 2016] [notice] Server built: Sep 10 2011 11:34:11
-[Mon May 09 16:47:07 2016] [notice] Parent: Created child process 7976
-[Mon May 09 16:47:07 2016] [notice] Child 7976: Child process is running
-[Mon May 09 16:47:07 2016] [notice] Child 7976: Acquired the start mutex.
-[Mon May 09 16:47:07 2016] [notice] Child 7976: Starting 64 worker threads.
-[Mon May 09 16:47:07 2016] [notice] Child 7976: Starting thread to listen on port 8080.
-[Mon May 09 16:47:07 2016] [notice] Child 7976: Starting thread to listen on port 8080.
+[Sun May 29 14:38:07 2016] [notice] Apache/2.2.21 (Win32) PHP/5.3.9 configured -- resuming normal operations
+[Sun May 29 14:38:07 2016] [notice] Server built: Sep 10 2011 11:34:11
+[Sun May 29 14:38:07 2016] [notice] Parent: Created child process 14300
+[Sun May 29 14:38:07 2016] [notice] Child 14300: Child process is running
+[Sun May 29 14:38:07 2016] [notice] Child 14300: Acquired the start mutex.
+[Sun May 29 14:38:07 2016] [notice] Child 14300: Starting 64 worker threads.
+[Sun May 29 14:38:07 2016] [notice] Child 14300: Starting thread to listen on port 8080.
+[Sun May 29 14:38:07 2016] [notice] Child 14300: Starting thread to listen on port 8080.
+[Sun May 29 14:38:14 2016] [error] [client ::1] File does not exist: H:/BikersWorldC-App/PHP-Webserver/root/EPM2
+[Sun May 29 14:38:14 2016] [error] [client ::1] File does not exist: H:/BikersWorldC-App/PHP-Webserver/root/favicon.ico, referer: http://localhost:8080/EPM2/
